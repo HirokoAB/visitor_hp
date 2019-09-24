@@ -1,0 +1,66 @@
+@charset "utf-8";
+/*-----------------------------------
+
+	contents
+
+-----------------------------------*/
+#contents{
+	margin: -5% auto 0;
+}
+#contents h2{
+    font-size: 32px;
+    letter-spacing: 0.2rem;
+    max-width: 100%;
+    width: 1140px;
+    background-image: url(../img/lower/h2_line.png),url(../img/lower/icon_yacht.png);
+    background-position: bottom center,right 45px;
+    background-repeat: no-repeat;
+	margin-bottom: 35px;
+    padding: 165px 0 30px 10px;
+}
+h3.h3_box{
+	font-size: 24px;
+	letter-spacing:0.3rem;
+	text-align: center;
+	margin: 30px 0;
+	padding: 20px 5px;
+	border: solid 2px #24536c;
+}
+.intro_text{
+	font-size: 19px;
+	color: #000;
+	text-align:center;
+	line-height: 1.6;
+	word-wrap: break-word;
+	 word-break: break-all;
+}
+
+
+
+
+@media screen and (max-width: 840px) {
+	#contents h2{
+		width: 100%;
+		font-size: 30px;
+		background-size: 100%,20%;
+		background-position: bottom center,right 95%;
+		margin-bottom: 20px;
+		padding: 100px 0 30px;
+	}
+}
+@media screen and (max-width: 640px) {
+	#contents h2{
+		font-size: 21px;
+		letter-spacing: 0.2rem;
+		background-size: 100%,20%;
+		padding: 60px 0 13px
+	}
+	h3.h3_box{
+		font-size: 18px;
+		letter-spacing:0.3rem;
+		padding: 10px 0;
+	}
+	.intro_text{
+		font-size: 16px;
+	}
+}

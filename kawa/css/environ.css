@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/*-----------------------------------
+
+	共通
+
+-----------------------------------*/
+h3 {
+	font-size: 24px;
+	letter-spacing:0.3rem;
+	position: relative;
+	text-align: center;
+	margin-bottom: 15px;
+}
+h3 span {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	background:#dff1f3;
+	text-align: left;
+	padding: 0 1em;
+}
+h3::before {
+	width: 100%;
+	height: 2px;
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	content: '';
+	display: block;
+	background-color: #24536c;
+}
+@media screen and (max-width: 640px) {
+	h3 {
+		font-size: 21px;
+	}
+}
+
+/*-----------------------------------
+
+	mainimg
+
+-----------------------------------*/
+#main{
+	margin-bottom: 60px;
+}
+#main .main_img img{
+	width: 100%;
+	margin:0 auto 20px;
+}
+
+.kyoten{
+	font-size: 24px;
+	margin: 15px;
+	text-align: center;
+}
+
+.main_text{
+	font-size: 18px;
+	color: #000;
+	word-wrap: break-word;
+	word-break: break-all;
+	margin-bottom: 15px;
+	line-height: 170%;
+	text-align: center;
+}
+.map_link{
+	color: #fff;
+	background: #08b047;
+	width: 170px;
+	font-size: 14px !important;
+	text-align: center;
+	display: inline-block;
+	margin-bottom: 50px;
+	padding: 1px 5px;
+}
+
+
+@media screen and (max-width: 640px) {
+	.main_text{
+		font-size: 15px;
+		text-align: left;
+	}
+}
+
+
+
+/*-----------------------------------
+
+	guide_block
+
+-----------------------------------*/
+#guide_block dl{
+    font-size: 16px;
+    color: #24536c;
+}
+#guide_block dt{
+	width: 100px;
+	float: left;
+	padding-bottom: 20px;
+}
+#guide_block dd {
+    padding:0 0 20px 100px;
+}
+@media screen and (max-width: 840px) {
+	#guide_block{
+	  margin-bottom: 30px;
+	}
+}
+/*-----------------------------------
+
+	map_block
+
+-----------------------------------*/
+#map_block img{
+	width: 100%;
+}

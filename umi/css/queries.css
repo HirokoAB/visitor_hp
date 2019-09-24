@@ -1,0 +1,253 @@
+
+
+
+
+/* 1120px (Small Desktop, Netbook) */
+@media screen and (max-width:1130px) {
+#nav-toggle {
+	float: right;
+	position: absolute;
+}
+}
+
+/* 1200px (Small Desktop, Netbook) */
+@media screen and (max-width:1280px) {
+.hmenu .menu a {
+	margin-left: 5px;
+}
+}
+
+/* xGA iPad */
+@media screen and (max-width:1024px) {
+.sp {
+	display: block;
+}
+.pc, .hmenu .menu a.pc {
+	display: none;
+}
+/*.sp {display: block;}
+.pc,
+.hmenu .menu a.pc {display: none;}
+#nav-toggle {padding: 8px 10px;} */
+}
+
+/* Bootstrap 990px Breakpoint to 480px */
+@media screen and (min-width:480px) and (max-width:991px) {
+.banner a img {
+	margin: 5px 0;
+}
+}
+
+
+/* 480px (WVGA - Low End Windows Phone) */
+/*@media screen and (max-width:480px) {*/
+@media screen and (max-width:768px) {
+.sp {
+	display: block;
+}
+.pc, .hmenu .menu a.pc {
+	display: none;
+}
+.hmenu a img {
+	margin: 0 auto;
+}
+.event {
+	padding: 30px 15px 40px;
+}
+.sozai-bg .cover {
+	padding: 30px 0;
+}
+.waza-bg .cover {
+	padding: 30px 0;
+}
+.sozai-bg {
+	height: 100px;
+}
+.waza-bg {
+	height: 100px;
+}
+.contact-box {
+	margin: 10px auto 80px;
+	width: 100%;
+}
+.contact-box dl dt {
+	float: none;
+	width: auto;
+	padding: 5px;
+	background: #3e3e3e;
+	text-align: center;
+}
+.contact-box dl dt span {
+	display: inline;
+}
+.contact-box dl dd {
+	margin-left: 15px;
+}
+.clist dl {
+	padding: 10px 0;
+}
+.clist dl dt {
+	float: none;
+	width: 100%;
+}
+.clist dl dd {
+	margin-left: 0;
+}
+.btn {
+	display: block;
+	width: auto;
+}
+.cover {
+	top: 0;
+}
+.p-l-0 {
+	padding-left: 15px;
+}
+.p-r-0 {
+	padding-right: 15px;
+}
+.modal-footer .btn {
+	height: auto;
+	width: 80%;
+	padding: 5px 20px;
+	margin: 10px auto;
+}
+.top-eve-list {
+	height: auto;
+	margin-bottom: 20px;
+	overflow: visible;
+}
+.top-news-list {
+	height: auto;
+	margin-bottom: 20px;
+	overflow: visible;
+}
+.map-ac {
+	height: 450px;
+}
+
+.map-img {
+	height: 300px;
+}
+
+}
+
+
+/* 320px (iPhone) */
+@media screen and (max-width:480px) {
+.sp {
+	display: block;
+}
+.pc, .hmenu .menu a .pc {
+	display: none;
+}
+.hmenu {
+	padding-bottom: 40px;
+}
+.hmenu, footer {
+	background-size: auto 20px;
+}
+p {
+	font-size: 14px;
+}
+#nav-toggle {
+	padding: 0;
+}
+.cover {
+	top: 0;
+}
+.sozai-bg {
+	height: 100px;
+}
+.waza-bg {
+	height: 100px;
+}
+.cover {
+	padding: 0;
+}
+.sec-img-box h1 img {
+	height: 28px;
+}
+h2 img {
+	height: 26px !important;
+}
+.top-link h2 img, .top-info h2 img, .top-acc h2 img {
+	height: 34px !important;
+}
+.top-item01, .top-item02 {
+	display: none;
+}
+.top-img {
+	height: 200px;
+}
+.top-img01 {
+	height: 180px;
+}
+.sp-logo {
+	text-align: center;
+}
+.banner a img {
+	margin: 5px 0;
+}
+.top-name {
+	margin: 20px 0;
+}
+.inner {
+	padding-bottom: 10px;
+	padding-top: 20px;
+}
+.sec-top-img {
+	height: 150px;
+}
+.top-item01, .top-item02, .sec-top-item01, .sec-top-item02 {
+	display: none;
+}
+.top-eve, .top-con {
+	overflow-y: hidden;
+	height: auto;
+}
+.top-link h2 {
+	margin-top: 30px;
+}
+.item01 {
+	background: none;
+}
+.sec-img-box h1 {
+	top: 40%;
+	padding: 0 30px;
+}
+.top-con dl, .guide-box dl, .rent-list dl, .con-box dl, .policy-box dl {
+	padding: 15px 0;
+}
+.top-con dl dt, .guide-box dl dt, .rent-list dl dt, .con-box dl dt, .policy-box dl dt {
+	float: none;
+	width: 100%;
+}
+.top-con dl dd, .guide-box dl dd, .rent-list dl dd, .con-box dl dd, .policy-box dl dd {
+	margin-left: 0;
+}
+.map {
+	margin-top: 30px;
+}
+.line-box {
+	padding: 20px;
+}
+.env-img, .env-map {
+	height: 180px;
+}
+.sm-box ul.ul-l, .sm-box ul.ul-r {
+	float: none;
+	width: 100%;
+	padding: 0;
+}
+.sm-box a {
+	display: block;
+}
+
+.map-img {
+	height: 180px;
+}
+
+}
+
+

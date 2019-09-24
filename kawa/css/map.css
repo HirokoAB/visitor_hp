@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/*-----------------------------------
+
+	共通
+
+-----------------------------------*/
+#wrap {
+    width:100%;
+}
+#contents {
+    margin: 0;
+    padding: 0;
+    width:100%;
+    background: #fff;
+}
+#map_box {
+}
+#map_box img {
+    max-width: 100%;
+}
+#text_box {
+    display: table;
+    margin: 10px 0;
+    padding: 0;
+    width: 100%;
+}
+#left_box {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    width: 80%;
+}
+#right_box {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+}
+
+.access,
+.root {
+    margin-bottom: 5px;
+    line-height: 1.4em;
+}
+.access {
+    padding-left: 6em;
+    text-indent: -6em;
+}
+.root {
+    padding-left: 2em;
+    text-indent: -2em;
+}
+@media screen and (max-width: 840px) {
+    #left_box,
+    #right_box {
+        display: block;
+        width: 100%;
+    }
+    #right_box {
+        margin-top: 20px;
+        text-align: center;
+    }
+}

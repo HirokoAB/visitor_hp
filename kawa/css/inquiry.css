@@ -1,0 +1,224 @@
+@charset "UTF-8";
+/*-----------------------------------
+
+	共通
+
+-----------------------------------*/
+h3 {
+	font-size: 24px;
+	letter-spacing:0.3rem;
+	position: relative;
+	text-align: center;
+	margin-bottom: 15px;
+}
+h3 span {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	background:#dff1f3;
+	text-align: left;
+	padding: 0 1em;
+}
+h3::before {
+	width: 100%;
+	height: 2px;
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	content: '';
+	display: block;
+	background-color: #24536c;
+}
+@media screen and (max-width: 640px) {
+	h3 {
+		font-size: 21px;
+	}
+}
+
+/*-----------------------------------
+
+	mainimg
+
+-----------------------------------*/
+#main{
+	margin-bottom: 60px;
+}
+#main_img{
+	width: 100%;
+	max-width:1140px;
+	margin:0 auto 20px;
+}
+#main_img img{
+	width: 100%;
+}
+#main_text{
+	width: 1000px;
+	margin-left: 50px;
+	font-size: 21px;
+	color: #000;
+	word-wrap: break-word;
+	word-break: break-all;
+	margin-top: 10px;
+	line-height: 170%;
+}
+@media screen and (max-width: 640px) {
+	#main_text{
+		width: 100%;
+		margin-left: 0px;
+		font-size: 18px;
+	}
+}
+
+/*-----------------------------------
+
+	フォーム
+
+-----------------------------------*/
+
+.hosoku{
+	font-size: 18px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.complete{
+	font-size: 18px;
+	text-align: center;
+	margin: 100px 0;
+}
+
+.contactform dl {
+	width: 700px;
+	margin: 0 auto;
+}
+.contactform dt {
+	float: left;
+	line-height: 2em;
+	font-size: 18px;
+}
+.contactform dd {
+	font-size: 18px;
+	margin: 0 0 20px 180px;
+	line-height: 1.4em;
+}
+.contactform dd {
+	margin: 0 0 20px 220px;
+	line-height: 1.4em;
+}
+.contactform input[type="text"] {
+	width: 99%;
+}
+.contactform input {
+	font-size: 18px;
+	line-height: 15px;
+	padding: 5px 10px;
+	border: 1px solid #666;
+	background-color: #F8F8F8;
+}
+.contactform textarea {
+	font-size: 1em;
+	line-height: 1.4em;
+	padding: 5px 10px;
+	border: 1px solid #666;
+	width: 99%;
+	background-color: #F8F8F8;
+}
+.contactform .formbot {
+	font-size: 17px;
+	line-height: 2em;
+	position: relative;
+	display: inline-block;
+	margin: 40px auto;
+	padding: 5px 50px;
+	text-decoration: none;
+	background-color: #aaa;
+	border-radius: 4px;
+	border: solid 1px #89cdc6;
+}
+.contactform .formbot[value=edit] {
+    background-color: #ddd;
+}
+.contactform .formbot[value=edit]:hover {
+    background-color: #aaa;
+}
+.contactform .formbot[value=confirm],
+.contactform .formbot[value=send] {
+	background-color: #c4e7d8;
+}
+.contactform .formbot[value=confirm]:hover,
+.contactform .formbot[value=send]:hover {
+    background-color: #93CC85;
+}
+
+.kakunin{
+	text-align: center;
+	display: block;
+}
+
+.doui_text{
+	font-size: 17px;
+}
+.form_error {
+	font-size: 14px;
+	color: #d00;
+}
+
+
+@media screen and (max-width: 640px) {
+	.policy_txt{
+		font-size: 14px;
+		line-height: 1.6;
+		margin-left: 10px;
+	}
+	.hosoku{
+		font-size: 15px;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.contactform dt {
+		float: none;
+		line-height: 1.2em;
+		font-size: 15px;
+	}
+	.contactform dd {
+		margin: 5px 0 15px;
+		padding: 0 1em;
+		line-height: 1.2em;
+	}
+	.contactform input[type="text"] {
+		width: 40%;
+	}
+	.contactform textarea {
+		font-size: 1em;
+		line-height: 1.4em;
+		padding: 5px 10px;
+		border: 1px solid #666;
+		width: 40%;
+		background-color: #F8F8F8;
+	}
+	.doui_text{
+		width: 45%;
+		font-size: 12px;
+		text-align: center;
+	}
+	.contactform .formbot {
+		font-size: 13px;
+		line-height: 2em;
+		position: relative;
+		display: block;
+		margin: 20px auto;
+		padding: 5px 50px;
+		text-decoration: none;
+		background: #c4e7d8;
+		border-radius: 4px;
+		border: solid 1px #89cdc6;
+	}
+	.contactform .formbot:hover {
+	    background-color: #93CC85;
+	}
+	.kakunin{
+		position: absolute;
+		width: 90%;
+		text-align: center;
+		display: block;
+	}
+}

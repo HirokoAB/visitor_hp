@@ -1,0 +1,5 @@
+#AuthUserFile /usr/home/ae136g4cz2/html/kawa/.htpasswd
+#AuthType Basic
+#AuthName "Web access"
+#Require valid-user
+#AddType text/x-component .htc
