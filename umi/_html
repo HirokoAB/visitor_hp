@@ -1,0 +1,50 @@
+
+
+<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 inner">
+			
+			<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu2">
+			
+				<!-- ↓PDFの表紙イメージのファイル名↓ -->
+				<p><a href="img/visi_flash01.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/visi_flash01.jpg" data-lightbox="image-1" alt="" class="img-responsive">
+					</a></p>
+				
+				<!-- ↓PDFのタイトル↓ -->
+				<h2 class="text-center" style="font-size:">VISIフラッシュ　Vol.1</h2>
+				
+				<!-- ↓PDFの説明↓ -->
+				<p>南三陸・海のビジターセンターのリーフレットです。</p>
+				
+				<!-- ↓PDFのリンク先とファイル容量↓ -->
+				<p class="text-center"><a href="download/visi_flash01.pdf" target="_blank">PDFダウンロード(2MB) </a></p>
+			</div>
+			
+			<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu2 delay-025s">
+			
+				<!-- ↓PDFの表紙イメージのファイル名↓ -->
+				<p><a href="img/visi_flash02.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/visi_flash02.jpg" alt="VISI創刊号" data-lightbox="image-1" class="img-responsive"></p>
+				
+				<!-- ↓PDFのタイトル↓ -->
+				<h2 class="text-center">VISIフラッシュ　Vol.2</h2>
+				
+				<!-- ↓PDFの説明↓ -->
+				<p>川と海のビジターセンターの季節ごとのレポートです。</p>
+				
+				<!-- ↓PDFのリンク先とファイル容量↓ -->
+				<p class="text-center"><a href="download/visi_flash02.pdf" target="_blank">PDFダウンロード(1.8MB) </a></p>
+			</div>
+			
+			<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu2 delay-05s">
+			
+				<!-- ↓PDFの表紙イメージのファイル名↓ -->
+				<p><a href="img/visi_flash03.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/visi_flash03.jpg" alt="VISI夏号" class="img-responsive"></p>
+				
+				<!-- ↓PDFのタイトル↓ -->
+				<h2 class="text-center">VISIフラッシュ　Vol.3</h2>
+				
+				<!-- ↓PDFの説明↓ -->
+				<p>川と海のビジターセンターの季節ごとのレポートです。</p>
+				
+				<!-- ↓PDFのリンク先とファイル容量↓ -->
+				<p class="text-center"><a href="download/visi_flash03.pdf" target="_blank">PDFダウンロード(1.8MB) </a></p>
+			</div>S
