@@ -68,8 +68,8 @@
     $.extend(this.options, options);
   };
 
-  Lightbox.prototype.imageCountLabel = function(currentImageNum, totalImages) {
-    return this.options.albumLabel.replace(/%1/g, currentImageNum).replace(/%2/g, totalImages);
+  Lightbox.prototype.imageCountLabel = function(currentImageNum, total ) {
+    return this.options.albumLabel.replace(/%1/g, currentImageNum).replace(/%2/g, total );
   };
 
   Lightbox.prototype.init = function() {
@@ -418,14 +418,14 @@
     }
   };
 
-  // Display the image and its details and begin preload neighboring images.
+  // Display the image and its details and begin preload neighboring  .
   Lightbox.prototype.showImage = function() {
     this.$lightbox.find('.lb-loader').stop(true).hide();
     this.$lightbox.find('.lb-image').fadeIn(this.options.imageFadeDuration);
 
     this.updateNav();
     this.updateDetails();
-    this.preloadNeighboringImages();
+    this.preloadNeighboring ();
     this.enableKeyboardNav();
   };
 
@@ -496,8 +496,8 @@
     });
   };
 
-  // Preload previous and next images in set.
-  Lightbox.prototype.preloadNeighboringImages = function() {
+  // Preload previous and next   in set.
+  Lightbox.prototype.preloadNeighboring  = function() {
     if (this.album.length > this.currentImageIndex + 1) {
       var preloadNext = new Image();
       preloadNext.src = this.album[this.currentImageIndex + 1].link;
