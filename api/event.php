@@ -91,7 +91,7 @@
 		// -----------------------------------------------------
         if (0 < count($arrList)) {
             foreach($arrList as $key => $value) {
-                $arrList[$key]['public_date'  ] = $classUtility->formatDate('Y.m.d', $value['public_start']);   // 公開日
+                $arrList[$key]['public_date'  ] = $classUtility->formatDate('Y.m.d'.' 更新', $value['public_start']);   // 公開日
                 $arrList[$key]['category_name'] = $arrMaster['event_category'][$value['category_id']]['name'];   // カテゴリ名
                 $arrSearch = [
                     'event_id'    => $value['event_id'],

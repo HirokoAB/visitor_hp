@@ -47,8 +47,68 @@ $(document).ready(function() {
 	}, {
 		offset: '75%'
 	});
-	
-	
+	$('.wp-fiu9').waypoint(function() {
+		$('.wp-fiu9').addClass('animated fadeInUp');
+	}, {
+		offset: '75%'
+	});
+	$('.wp-fiu10').waypoint(function() {
+		$('.wp-fiu10').addClass('animated fadeInUp');
+	}, {
+		offset: '75%'
+	});
+	$('.wp-fiu11').waypoint(function() {
+		$('.wp-fiu11').addClass('animated fadeInUp');
+	}, {
+		offset: '75%'
+	});
+	$('.wp-fiu12').waypoint(function() {
+		$('.wp-fiu12').addClass('animated fadeInUp');
+	}, {
+		offset: '75%'
+	});
+	$('.wp-fiu13').waypoint(function() {
+		$('.wp-fiu13').addClass('animated fadeInUp');
+	}, {
+		offset: '75%'
+	});
+	$('.wp-fiu14').waypoint(function() {
+		$('.wp-fiu14').addClass('animated fadeInUp');
+	}, {
+		offset: '75%'
+	});
+	$('.wp-fiu15').waypoint(function() {
+		$('.wp-fiu15').addClass('animated fadeInUp');
+	}, {
+		offset: '75%'
+	});
+	$('.wp-fiu16').waypoint(function() {
+		$('.wp-fiu16').addClass('animated fadeInUp');
+	}, {
+		offset: '75%'
+	});
+	$('.wp-fiu17').waypoint(function() {
+		$('.wp-fiu17').addClass('animated fadeInUp');
+	}, {
+		offset: '75%'
+	});
+	$('.wp-fiu18').waypoint(function() {
+		$('.wp-fiu18').addClass('animated fadeInUp');
+	}, {
+		offset: '75%'
+	});
+	$('.wp-fiu19').waypoint(function() {
+		$('.wp-fiu19').addClass('animated fadeInUp');
+	}, {
+		offset: '75%'
+	});
+	$('.wp-fiu20').waypoint(function() {
+		$('.wp-fiu20').addClass('animated fadeInUp');
+	}, {
+		offset: '75%'
+	});
+
+
 	$('.wp-fid1').waypoint(function() {
 		$('.wp-fid1').addClass('animated fadeInDown');
 	}, {
@@ -74,8 +134,8 @@ $(document).ready(function() {
 	}, {
 		offset: '75%'
 	});
-	
-	
+
+
 	$('.wp-fil1').waypoint(function() {
 		$('..wp-fil1').addClass('animated fadeInLeft');
 	}, {
@@ -101,7 +161,7 @@ $(document).ready(function() {
 	}, {
 		offset: '55%'
 	});
-	
+
 	$('.wp-fir1').waypoint(function() {
 		$('.wp-fir1').addClass('animated fadeInRight');
 	}, {
@@ -117,8 +177,8 @@ $(document).ready(function() {
 	}, {
 		offset: '55%'
 	});
-	
-	
+
+
 });
 
 /***************** Slide-In Nav ******************/
@@ -210,7 +270,7 @@ $(document).ready(function() {
 //	}
 //	document.onscroll = scroll;
 //});
-//	
+//
 
 /***************** Nav Transformicon ******************/
 
@@ -256,7 +316,7 @@ $(document).ready(function(){
 
 $(function() {
 	$('#submit').attr('disabled', 'disabled');
-	
+
 	$('#check').click(function() {
 		if ($(this).prop('checked') == false) {
 			$('#submit').attr('disabled', 'disabled');
@@ -316,3 +376,26 @@ $(function() {
 //
 //});
 
+
+// =======================================
+//
+//  URLパラメーターを取得し配列に格納
+//
+// =======================================
+var arg = new Object;
+var pair = location.search.substring(1).split('&');
+for(var i=0; pair[i]; i++) {
+    var kv = pair[i].split('=');
+    arg[kv[0]] = kv[1];
+}
+
+// =======================================
+//
+//  改行コードを改行タグに変換
+//
+// =======================================
+function nl2br(str) {
+	str = str.replace(/\r\n/g, "\n");
+	str = str.replace(/(\n|\r)/g, "<br />");
+	return str;
+}

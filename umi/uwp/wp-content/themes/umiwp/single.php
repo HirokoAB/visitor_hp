@@ -56,11 +56,6 @@ $args = array(
 
 <?php endif;?>
 
-			<div class="fb-share-button" data-href="<?php the_permalink(); ?>" data-layout="button_count" data-size="small" style="margin:0 0 0 auto;"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fkawatouminovisitorcenter.jp%2Fumi%2Findex.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></div>
-			<!-- <div class="twitter-share"><a target="_blank" href="http://twitter.com/share?url=<?php echo the_permalink(); ?>&text=南三陸海のビジターセンター">twitter</a></div>
- -->
-
-			</div>
 			</div>
 			</div>
 		</div>

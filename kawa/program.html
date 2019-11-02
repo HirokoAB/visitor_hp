@@ -23,6 +23,7 @@ $(function(){
         if ('' == json.list) {
             return false;
         }
+		var id = (arg.id) ? arg.id: json.list[0].program_id;
         var html = '';
         var num = 1;
         for (i in json.list) {
@@ -32,46 +33,42 @@ $(function(){
             html += '</li>';
         }
         $('#program_nav').append(html);
-    });
 
-    // プログラムの取得
-    var id = (arg.id) ? arg.id: 1;
-    $.getJSON('../api/program.php?search[position_id]=2&search[program_id]=' + id, null, function(json, status){
-        if ('' == json.list) {
-            return false;
-        }
-        $('#program_block h3').text(json.list[0].name);
-
-        var html = '';
-        for (i in json.list[0].detail) {
-            var list = json.list[0].detail[i];
-            if (list.image_path) {
-                html += '<section class="clearfix">';
-                html += '<div class="program_left">';
-                html += '<h4>' + list.title + '</h4>';
-                html += '<p>' + nl2br(list.text) + '</p>';
-                if (list.file) {
-                    html += '<a href="download.php?file=' + list.file_path + '" class="download"><p class="pdf_link">' + list.file_text + '（' + list.file_size + '）</p></a>';
-                }
-                html += '</div>';
-                html += '<p class="program_right"><img src="' + list.image_path + '" alt="' + list.image_text + '"></p>';
-                html += '</section>';
-            } else {
-                html += '<section class="clearfix">';
-                html += '<div class="program_all">';
-                html += '<h4>' + list.title + '</h4>';
-                html += '<p>' + nl2br(list.text) + '</p>';
-                if (list.file) {
-                    html += '<a href="download.php?file=' + list.file_path + '" class="download"><p class="pdf_link">' + list.file_text + '（' + list.file_size + '）</p></a>';
-                }
-                html += '</div>';
-                html += '</section>';
+        // プログラムの取得
+        $.getJSON('../api/program.php?search[position_id]=2&search[program_id]=' + id, null, function(json, status){
+            if ('' == json.list) {
+                return false;
             }
-        }
-        $('#program_block').append(html);
-//        if (arg.id) {
-//            $('html,body').animate({scrollTop:($('#program_block').offset().top - 20)});
-//        }
+            $('#program_block h3').text(json.list[0].name);
+
+            var html = '';
+            for (i in json.list[0].detail) {
+                var list = json.list[0].detail[i];
+                if (list.image_path) {
+                    html += '<section class="clearfix">';
+                    html += '<div class="program_left">';
+                    html += '<h4>' + list.title + '</h4>';
+                    html += '<p>' + nl2br(list.text) + '</p>';
+                    if (list.file) {
+                        html += '<a href="download.php?file=' + list.file_path + '" class="download"><p class="pdf_link">' + list.file_text + '（' + list.file_size + '）</p></a>';
+                    }
+                    html += '</div>';
+                    html += '<p class="program_right"><img src="' + list.image_path + '" alt="' + list.image_text + '"></p>';
+                    html += '</section>';
+                } else {
+                    html += '<section class="clearfix">';
+                    html += '<div class="program_all">';
+                    html += '<h4>' + list.title + '</h4>';
+                    html += '<p>' + nl2br(list.text) + '</p>';
+                    if (list.file) {
+                        html += '<a href="download.php?file=' + list.file_path + '" class="download"><p class="pdf_link">' + list.file_text + '（' + list.file_size + '）</p></a>';
+                    }
+                    html += '</div>';
+                    html += '</section>';
+                }
+            }
+            $('#program_block').append(html);
+        });
     });
 });
 </script>
