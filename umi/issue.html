@@ -210,13 +210,22 @@ $(document).ready(function(e) {
 $(function(){
 
     // 発刊物の取得
+
+    //データベースにアクセスして、ポジションID１＝海の発刊物を取得する、送信するデータはなし、戻り値を用いて
+    //functionが実行される
     $.getJSON('../api/issue.php?search[position_id]=1', null, function(json, status){
+
+    	//もしjson.listがからであれば処理のループから抜け出す
         if ('' == json.list) {
             return false;
         }
+        //変数を初期化する
         var html = '';
+        //json.listがある限り
         for (i in json.list) {
+        	 //listの中にはデータベースに入っているデータが１行ずつ格納されている
             var list = json.list[i];
+
 			if (0 === (i % 2)) {
 				html += '<div class="row">';
 				html += '<ul id="issue_block" class="col-sm-8 col-sm-offset-2">';
@@ -236,9 +245,17 @@ $(function(){
 				html += '</div>';
 			}
         }
+
+        console.log(html);
         $('.issue-box').append(html);
     });
 });
+
+
+ var test = $.getJSON('../api/issue.php',function(test){
+ 			 console.log(test);
+ });
+
 </script>
 </body>
 </html>

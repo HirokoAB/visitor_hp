@@ -54,6 +54,8 @@ if (!(ereg("Windows",$_SERVER['HTTP_USER_AGENT']) && ereg("MSIE",$_SERVER['HTTP_
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+<?php wp_head() ;?>
+
 </head>
 
 <body id="top" class="drawer drawer--right">

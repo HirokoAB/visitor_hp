@@ -1188,6 +1188,7 @@ contact
 .con-box dl dd input{
 	width: 50%;
 	padding: 0 5px;
+	height:85%;
 }
 
 .con-box dl dd textarea{

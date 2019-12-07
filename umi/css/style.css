@@ -1692,6 +1692,187 @@ contact
 	margin-left: 10px;
 }
 
+/* ==========================================================================
+contact_追記_フィールドミュジアム入力画面
+========================================================================== */
+#wrap_contact{
+width: 700px;
+}
+
+#wrap_contact dl{
+width: 100%;
+border-collapse: collapse;
+border: solid #CCC;
+border-width: 1px;
+margin:2% 0;
+letter-spacing:0.3rem;
+
+}
+
+#wrap_contact dl dd{
+padding: 0.5em;
+text-align: left;
+vertical-align: top;
+border: solid #CCC;
+border-width: 1px;
+}
+
+#wrap_contact dl dt{
+width:20%;
+float:left;
+clear:left;
+}
+
+#wrap_contact dl dd{
+	margin-left:20%;
+	margin-bottom:3%;
+	background: #ffffff;
+}
+
+
+#wrap_contact input,
+#wrap_contact textarea{
+padding: 0.7em;
+width: 99%;
+font-size:16px;
+}
+
+.wpcf7-form-mode-edit #wrap_contact input[type="checkbox"],
+#wrap_contact input[type="radio"]
+{
+	width:auto;
+}
+
+#wrap_contact .helth-check dd{
+	border:none;
+}
+
+#wrap_contact .helth-check dt{
+	width:70%;
+	padding:0.5em;
+	letter-spacing:normal;
+}
+
+.wpcf7-list-item{
+	margin:2rem;	
+}
+
+.wpcf7-form-mode-edit #wrap_contact input[type="button"].button-confirm, 
+.wpcf7-form-mode-confirm #wrap_contact input[type="submit"] {
+    background: #ee5656;
+    height: 60px;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    width: 300px;
+    display: inline;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+}
+
+.wpcf7-form-mode-confirm #wrap_contact input[type="button"].button-rewrite {
+    background: #666666;
+    height: 60px;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    width: 300px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+}
+
+#wrap_contact dl dt span{
+color: #fff;
+background: #DC0003;
+padding: 3px 3px;
+font-size: 11px;
+margin-left: 10px;
+border-radius: 3px;
+letter-spacing: 0.2em;
+}
+
+#wrap_contact .experience .flexbox
+/*#wrap_contact .physical-info .flexbox*/
+{
+ display:flex;
+ align-items:center;
+}
+
+#wrap_contact .experience .times{
+	width:20%;
+}
+
+
+.wpcf7-form-mode-confirm #wrap_contact dl dt span,
+.wpcf7-form-mode-confirm #wrap_contact .txt_edit,
+.wpcf7-form-mode-confirm #wrap_contact .txt_sent{
+  display:none;
+}
+
+.wpcf7-form-mode-edit #wrap_contact .txt_confirm,
+.wpcf7-form-mode-edit #wrap_contact .txt_sent{
+  display:none;
+}
+
+.sent #wrap_contact .txt_confirm,
+.sent #wrap_contact .txt_edit,
+.sent #wrap_contact dl,
+.sent #wrap_contact h2{
+  display:none;
+}
+
+.sent #wrap_contact .txt_sent{
+  display:block;
+}
+
+div.wpcf7-mail-sent-ok {
+    border: none;
+    padding:0;
+    margin:0;
+}
+
+#wrap_contact .consent h2{
+text-align:center;	
+}
+
+#wrap_contact .consent h2::after{
+	display:none;
+}
+
+
+@media screen and (max-width:768px){
+#wrap_contact{
+width: 100%;
+}
+
+#wrap_contact dl,
+#wrap_contact dl tr,
+#wrap_contact dl dt,
+#wrap_contact dl dd{
+display: block;
+}
+
+#wrap_contact dl{
+width: 100%;
+border-width: 0 0 1px 0;
+}
+
+#wrap_contact dl dt,
+#wrap_contact dl dd{
+width: 90%;
+padding: 3% 5%;
+}
+
+#wrap_contact dl dd{
+border-width: 0px 1px 0px 1px;
+}
+}
+
+
 
 /* ==========================================================================
 privacy policy

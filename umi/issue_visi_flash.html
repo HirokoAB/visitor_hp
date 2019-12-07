@@ -17,7 +17,7 @@
 <link href="css/normalize.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link href="css/queries.css" rel="stylesheet">
-<link href="css/lightbox.css" rel="stylesheet">
+<!-- <link href="css/lightbox.css" rel="stylesheet"> -->
 
 <link rel="shortcut icon" href="favicons/favicon.ico" type="image/vnd.microsoft.icon">
 <link rel="icon" href="favicons/favicon.ico" type="image/vnd.microsoft.icon">
@@ -49,10 +49,10 @@
         <![endif]-->
 </head>
 
-<body id="top" class="drawer drawer--right">
+<body id="top" class="drawer drawer--right drawer-close" style="overflow: auto;">
 
 <nav class="smenu drawer-nav">
-	<ul class="drawer-menu">
+	<ul class="drawer-menu" style="transition-timing-function:cubic-bezier(0.1,0.57,0.1,1);transition-duration:0ms;transform:translate(0px,0px) translateZ(0px); ">
 		<li><a class="drawer-toggle" style="text-align:right;">閉じる</a></li>
 		<li><a href="index.html">トップ</a></li>
 		<li><a href="facility.html">施設紹介</a></li>
@@ -113,7 +113,7 @@
 		</div>
 		<div class="row animated fadeInUp delay-05s">
 			<div class="col-sm-10 col-sm-offset-1">
-				<p class="text-center">季刊誌VISIの増刊号</p>
+				<p class="text-center">海のビジターセンター季刊誌VISIの増刊号!</p>
 			</div>
 		</div>
 	</div>
@@ -122,215 +122,148 @@
 <section>
 	<div class="container-fluid inner">
 		<div class="row">
-			<div class="col-xs-12 wp-fiu1"><h2><img src="img/issue_title_flash.png" alt="発刊物一覧" class="center-block img-responsive"></h2></div>
+			<div class="col-xs-12 wp-fiu1 animated fadeInUp"><h2><img src="img/issue_title_flash.png" alt="発刊物一覧" class="center-block img-responsive"></h2></div>
 		</div>
+		<!-- 一段目の記述 -->
 		<div class="issue-box">
 			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2 inner">
-				
-					<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu2">
-					
-						<!-- ↓PDFの表紙イメージのファイル名↓ -->
-						<p><a href="img/visi_flash01.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/visi_flash01.jpg" alt=""  class="img-responsive">
-							</a></p>
-						
-						<!-- ↓PDFのタイトル↓ -->
-						<h2 class="text-center" style="font-size:">VISIフラッシュ　Vol.1</h2>
-						
-						<!-- ↓PDFの説明↓ -->
-						<p class="text-center">外来種バスターズ：外来種って？<br>【次回予告】tsukuruのベンチをつくる日</p>
-						
-						<!-- ↓PDFのリンク先とファイル容量↓ -->
-						<p class="text-center"><a href="download/visi_flash01.pdf" target="_blank">PDFダウンロード(2MB) </a></p>
-					</div>
-				
-					<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu2 delay-025s">
-					
-						<!-- ↓PDFの表紙イメージのファイル名↓ -->
-						<p><a href="img/visi_flash02.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/visi_flash02.jpg" alt=""  class="img-responsive">
-							</a></p>
-						
-						<!-- ↓PDFのタイトル↓ -->
-						<h2 class="text-center" style="font-size:">VISIフラッシュ　Vol.2</h2>
-						
-						<!-- ↓PDFの説明↓ -->
-						<p class="text-center">tsukuruのベンチをつくる日<br>【次回予告】アワビセミナー</p>
-						
-						<!-- ↓PDFのリンク先とファイル容量↓ -->
-						<p class="text-center"><a href="download/visi_flash02.pdf" target="_blank">PDFダウンロード(1.8MB) </a></p>
-					</div>
-				
-					<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu2 delay-05s">
-					
-						<!-- ↓PDFの表紙イメージのファイル名↓ -->
-						<p><a href="img/visi_flash03.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/visi_flash03.jpg" data-lightbox="image-1" alt=""  class="img-responsive">
-							</a></p>
-						
-						<!-- ↓PDFのタイトル↓ -->
-						<h2 class="text-center" style="font-size:">VISIフラッシュ　Vol.3</h2>
-						
-						<!-- ↓PDFの説明↓ -->
-						<p class="text-center">アワビの一生<br>【次回予告】野鳥を語る会</p>
-						
-						<!-- ↓PDFのリンク先とファイル容量↓ -->
-						<p class="text-center"><a href="download/visi_flash03.pdf" target="_blank">PDFダウンロード(1.8MB) </a></p>
-					</div>
-				</div>			
-			</div>
+				<ul id="issue_block" class="col-sm-8 col-sm-offset-2">
+					<li class="col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+						<dl>
+							<dt>
+								<img src="../upload/images/issue/visi_flash01.jpg" alt="海のビジターセンターの季刊誌" class="img-responsive">
+							</dt>
+							<dd>
+								<h3>VISIフラッシュ　Vol.1</h3>
+								<p class="text-center">
+									<a href="download/visi_flash01.pdf" target="_blank">PDFダウンロード(2MB)</a></p>
+									<p class="text">外来種バスターズ<br>次回イベント案内</p>
+							</dd>
+						</dl>
+					</li>
+					<li class="col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+						<dl>
+							<dt>
+								<img src="../upload/images/issue/visi_flash02.jpg" alt="海のビジターセンターの季刊誌" class="img-responsive">
+							</dt>
+							<dd>
 
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2 inner">
-			
-			<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu2">
-			
-				<!-- ↓PDFの表紙イメージのファイル名↓ -->
-				<p><a href="img/visi_flash04.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/visi_flash04.jpg" alt=""  class="img-responsive"></a></p>
-						
-						<!-- ↓PDFのタイトル↓ -->
-						<h2 class="text-center" style="font-size:">VISIフラッシュ　Vol.4</h2>
-						
-						<!-- ↓PDFの説明↓ -->
-						<p class="text-center">野鳥を語る会を開催しました<br>【次回予告】うなぎセミナー</p>
-						
-						<!-- ↓PDFのリンク先とファイル容量↓ -->
-						<p class="text-center"><a href="download/visi_flash04.pdf" target="_blank">PDFダウンロード(2.2MB) </a></p>
-			</div>
-			
-			<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu2 delay-025s">
-			
-				<!-- ↓PDFの表紙イメージのファイル名↓ -->
-				<p><a href="img/visi_flash05.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/visi_flash05.jpg" alt=""  class="img-responsive"></a></p>
-						
-						<!-- ↓PDFのタイトル↓ -->
-						<h2 class="text-center" style="font-size:">VISIフラッシュ　Vol.5</h2>
-						
-						<!-- ↓PDFの説明↓ -->
-						<p class="text-center">うなぎセミナー盛況のうちに終了<br>【次回予告】人と生き物にやさしい畑づくり勉強会</p>
-						
-						<!-- ↓PDFのリンク先とファイル容量↓ -->
-						<p class="text-center"><a href="download/visi_flash05.pdf" target="_blank">PDFダウンロード(1.8MB) </a></p>
-			</div>
-			
-			<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu2 delay-05s">
-			
-				<!-- ↓PDFの表紙イメージのファイル名↓ -->
-				<p><a href="img/visi_flash06.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/visi_flash06.jpg" alt=""  class="img-responsive"></a></p>
-						
-						<!-- ↓PDFのタイトル↓ -->
-						<h2 class="text-center" style="font-size:">VISIフラッシュ　Vol.6</h2>
-						
-						<!-- ↓PDFの説明↓ -->
-						<p class="text-center">雑魚食堂料理教室<br>【次回予告】地引き網de鮮魚水族館</p>
-						
-						<!-- ↓PDFのリンク先とファイル容量↓ -->
-						<p class="text-center"><a href="download/visi_flash06.pdf" target="_blank">PDFダウンロード(1.9MB) </a></p>
-			</div>
+								<h3>VISIフラッシュ　Vol.2</h3>
+								<p class="text-center"><a href="download/visi_flash02.pdf" target="_blank">PDFダウンロード（10.9MB）</a></p>
+								<p class="text">tsukuruのベンチをつくる日<br>次回イベント案内</p>
+							</dd>
+						</dl>
+					</li>
+				</ul>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2 inner">
-			
-				<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu2">
-				
-					<!-- ↓PDFの表紙イメージのファイル名↓ -->
-					<p><a href="img/visi_flash07.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/visi_flash07.jpg" alt=""  class="img-responsive"></a></p>
-						
-						<!-- ↓PDFのタイトル↓ -->
-						<h2 class="text-center" style="font-size:">VISIフラッシュ　Vol.7</h2>
-						
-						<!-- ↓PDFの説明↓ -->
-						<p class="text-center">地引き網de鮮魚水族館開催しました<br>自然こしぇるの日参加者大募集</p>
-						
-						<!-- ↓PDFのリンク先とファイル容量↓ -->
-						<p class="text-center"><a href="download/visi_flash07.pdf" target="_blank">PDFダウンロード(1.9MB) </a></p>
-				</div>
-				
-				<!-- <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu2 delay-025s"> -->
-				
-					<!-- ↓PDFの表紙イメージのファイル名↓ -->
-					<!-- <p><a href="img/visi_flash01.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/VISI_vol07.jpg" alt="VISI第7号"  class="img-responsive"></p> -->
-					
-					<!-- ↓PDFのタイトル↓ -->
-					<!-- <h2 class="text-center">VISI第7号</h2> -->
-					
-					<!-- ↓PDFの説明↓ -->
-					<!-- <p class="text-center">川と海のビジターセンターの季節ごとのレポートです。</p> -->
-					
-					<!-- ↓PDFのリンク先とファイル容量↓ -->
-					<!-- <p class="text-center"><a href="download/VISI_vol07.pdf" target="_blank">PDFダウンロード(5.2MB) </a></p>
-				</div> -->
-			
-				<!-- <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu2 delay-05s"> -->
-				
-					<!-- ↓PDFの表紙イメージのファイル名↓ -->
-					<!-- <p><a href="img/visi_flash01.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/VISI_vol08.jpg" alt="VISI第8号"  class="img-responsive"></p> -->
-					
-					<!-- ↓PDFのタイトル↓ -->
-					<!-- <h2 class="text-center">VISI第8号</h2> -->
-					
-					<!-- ↓PDFの説明↓ -->
-					<!-- <p class="text-center">【企画】釣ったどー!! / 砂時計って作ることできるの!?<br>新しいスタッフの紹介　他
-					</p> -->
-					
-					<!-- ↓PDFのリンク先とファイル容量↓ -->
-					<!-- <p class="text-center"><a href="download/VISI_vol08.pdf" target="_blank">PDFダウンロード(3.2MB) </a></p>
-				</div>
-			</div>
-		</div>
-
+		<!-- 2段目の記述 -->
+		<div class="issue-box">
 			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2 inner">
-				
-				<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu3">
-					<p><a href="img/visi_flash01.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/VISI_vol09.jpg" alt=""  class="img-responsive"></p>
-					<h2 class="text-center">VISI第9号</h2>
-					<p class="text-center">【企画】鳥がいる!! / こしぇる日<br>ラムラール条約志津川湾 他</p>
-					<p class="text-center"><a href="download/VISI_vol09.pdf" target="_blank">PDFダウンロード(3.6MB) </a></p>
-				</div>
-				<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu3 delay-025s">
-					<p><a href="img/visi_flash01.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/VISI_vol10.jpg" alt=""  class="img-responsive"></p>
-					<h2 class="text-center">VISI第10号</h2>
-					<p class="text-center">【企画】ミツバチどこへ!? / いたー!!(磯観察) <br>お魚さんいらっしゃーい　他</p>
-					<p class="text-center"><a href="download/VISI_vol10.pdf" target="_blank">PDFダウンロード(3.6MB) </a></p>
-				</div> -->
-				<!-- <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu3 delay-05s">
-					<p><a href="img/visi_flash01.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/issue_img06.jpg" alt=""  class="img-responsive"></p>
-					<h2 class="text-center">発刊物名</h2>
-					<p class="text-center">南三陸・海のビジターセンターに置いてある発刊物の紹介です。説明が表示されます。</p>
-					<p class="text-center"><a href="download/issue06.pdf" target="_blank">PDFダウンロード(620kb) </a></p>
-				</div> -->
-			
-		<!-- 	</div> -->
+				<ul id="issue_block" class="col-sm-8 col-sm-offset-2">
+					<li class="col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+						<dl>
+							<dt>
+								<img src="../upload/images/issue/visi_flash03.jpg" alt="海のビジターセンターの季刊誌" class="img-responsive">
+							</dt>
+							<dd>
+								<h3>VISIフラッシュ　Vol.3</h3>
+								<p class="text-center">
+									<a href="download/visi_flash03.pdf" target="_blank">PDFダウンロード(2MB)</a></p>
+									<p class="text">アワビの一生<br>次回イベント案内</p>
+							</dd>
+						</dl>
+					</li>
+					<li class="col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+						<dl>
+							<dt>
+								<img src="../upload/images/issue/visi_flash04.jpg" alt="海のビジターセンターの季刊誌" class="img-responsive">
+							</dt>
+							<dd>
+								<h3>VISIフラッシュ　Vol.4</h3>
+								<p class="text-center"><a href="download/visi_flash04.pdf" target="_blank">PDFダウンロード(2MB)</a></p>
+								<p class="text">野鳥を語る会を開催しました<br>次回イベント案内</p>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</div>
 
-		<!--<div class="row">
-			<div class="col-sm-8 col-sm-offset-2 inner">
-			
-			<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu3">
-				<p><a href="img/visi_flash01.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/issue_img04.jpg" alt=""  class="img-responsive"></p>
-				<h2 class="text-center">発刊物名</h2>
-				<p class="text-center">南三陸・海のビジターセンターに置いてある発刊物の紹介です。説明が表示されます。</p>
-				<p class="text-center"><a href="download/issue04.pdf" target="_blank">PDFダウンロード(620kb) </a></p>
+		<!-- 3段目の記述 -->
+		<div class="issue-box">
+			<div class="row">
+				<ul id="issue_block" class="col-sm-8 col-sm-offset-2">
+					<li class="col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+						<dl>
+							<dt>
+								<img src="../upload/images/issue/visi_flash05.jpg" alt="海のビジターセンターの季刊誌" class="img-responsive">
+							</dt>
+							<dd>
+								<h3>VISIフラッシュ　Vol.5</h3>
+								<p class="text-center">
+									<a href="download/visi_flash05.pdf" target="_blank">PDFダウンロード(2MB)</a></p>
+									<p class="text">うなぎセミナー盛況のうちに終了<br>次回イベント案内</p>
+							</dd>
+						</dl>
+					</li>
+					<li class="col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+						<dl>
+							<dt>
+								<img src="../upload/images/issue/visi_flash06.jpg" alt="海のビジターセンターの季刊誌" class="img-responsive">
+							</dt>
+							<dd>
+								<h3>VISIフラッシュ　Vol.6</h3>
+								<p class="text-center"><a href="download/visi_flash06.pdf" target="_blank">PDFダウンロード(2MB)</a></p>
+								<p class="text">tsukuruのベンチをつくる日<br>次回イベント案内</p>
+							</dd>
+						</dl>
+					</li>
+				</ul>
 			</div>
-			<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu3 delay-025s">
-				<p><a href="img/visi_flash01.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/issue_img05.jpg" alt=""  class="img-responsive"></p>
-				<h2 class="text-center">発刊物名</h2>
-				<p class="text-center">南三陸・海のビジターセンターに置いてある発刊物の紹介です。説明が表示されます。</p>
-				<p class="text-center"><a href="download/issue05.pdf" target="_blank">PDFダウンロード(620kb) </a></p>
+		</div>
+
+		<!-- 4段目の記述 -->
+		<div class="issue-box">
+			<div class="row">
+				<ul id="issue_block" class="col-sm-8 col-sm-offset-2">
+					<li class="col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+						<dl>
+							<dt>
+								<img src="../upload/images/issue/visi_flash07.jpg" alt="海のビジターセンターの季刊誌" class="img-responsive">
+							</dt>
+							<dd>
+								<h3>VISIフラッシュ　Vol.7</h3>
+								<p class="text-center">
+									<a href="download/visi_flash07.pdf" target="_blank">PDFダウンロード(2MB)</a></p>
+									<p class="text">地引き網de鮮魚水族館開催しました<br>次回イベント案内</p>
+							</dd>
+						</dl>
+					</li>
+					<li class="col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+						<dl>
+							<dt>
+								<img src="../upload/images/issue/visi_flash08.jpg" alt="海のビジターセンターの季刊誌" class="img-responsive">
+							</dt>
+							<dd>
+								<h3>VISIフラッシュ　Vol.8</h3>
+								<p class="text-center"><a href="download/visi_flash08.pdf" target="_blank">PDFダウンロード(2MB)</a></p>
+								<p class="text">むしむし大作戦・自然こしぇる日開催しました！<br>次回イベント案内</p>
+							</dd>
+						</dl>
+					</li>
+				</ul>
 			</div>
-			<div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 wp-fiu3 delay-05s">
-				<p><a href="img/visi_flash01.jpg" data-lightbox="image-1" style="border:none; padding:0;"><img src="img/issue_img06.jpg" alt=""  class="img-responsive"></p>
-				<h2 class="text-center">発刊物名</h2>
-				<p class="text-center">南三陸・海のビジターセンターに置いてある発刊物の紹介です。説明が表示されます。</p>
-				<p class="text-center"><a href="download/issue06.pdf" target="_blank">PDFダウンロード(620kb) </a></p>
-			</div>
-			
-			</div>-->
 		</div>
-		</div>
-		</div>
+
+
+
+
 	</div>
-</section>
+</section>		
+				
+					
 
 
 <footer class="soft-bg">
@@ -343,13 +276,13 @@
 				</div>
 			</div>
 			<div class="row">
-			<div class="col-xs-12 col-md-5 col-md-offset-1">
+			<div class="col-xs-12 col-md-4 col-md-offset-1">
 				<p class="bl">三陸復興国立公園</p>
 				<p class="lead">南三陸・海のビジターセンター</p>
 				<p>〒９８６−０７８１<br>宮城県本吉郡南三陸町戸倉字坂本２１－１<br>
 				電話：０２２６－２５－７６２２　<br>開館時間：９：３０〜１６：３０　休館日：火曜日</p>
 			</div>
-			<div class="col-xs-12 col-md-5">
+			<div class="col-xs-12 col-md-7">
 				<div class="fmenu">
 				<div class="col-sm-4">
 					<ul>
@@ -358,28 +291,22 @@
 						<li class="indent"><a href="facility.html#guide">利用案内</a></li>
 						<li class="indent"><a href="facility.html#fmap">館内図</a></li>
 						<li><a href="rent.html">スペース貸出</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-4">
+					<ul>
 						<li><a href="staff.html">スタッフのご紹介</a></li>
 						<li><a href="issue.html">発刊物</a></li>
-						
-					</ul>
-				</div>
-				<div class="col-sm-4">
-					<ul>
 						<li><a href="program.html">自然体験プログラム</a></li>
-						<li class="indent"><a href="program.html#prog01">スタンドアップパドルボード</a></li>
-						<li class="indent"><a href="program.html#prog02">カヤック</a></li>
-						<li class="indent"><a href="program.html#prog03">スノーケリング</a></li>
-						<li class="indent"><a href="program.html#prog04">ハイキング</a></li>
-						<li class="indent"><a href="program.html#prog05">クッブ</a></li>
-					</ul>
-				</div>
-				<div class="col-sm-4">
-					<ul>
 						<li><a href="environ.html">周辺情報</a></li>
 						<li><a href="access.html">アクセス</a></li>
-						<li><a href="http://kawatouminovisitorcenter.jp/umi/info/?page_id=5">イベント</a></li>
-						<li><a href="http://kawatouminovisitorcenter.jp/umi/info/?page_id=2">お知らせ</a></li>
-						<li><a href="http://kawatouminovisitorcenter.jp/umi/info/?page_id=9">お問い合わせ</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-4">
+					<ul>
+						<li><a href="event.html">イベント</a></li>
+						<li><a href="info.html">お知らせ</a></li>
+						<li><a href="info/?page_id=9">お問い合わせ</a></li>
 						<li><a href="policy.html">プライバシーポリシー</a></li>
 						<li><a href="sitemap.html">サイトマップ</a></li>
 					</ul>
@@ -387,7 +314,6 @@
 				</div>
 			</div>
 			</div>
-		</div>
 		
 		<div class="row">
 			<div class="col-md-12">
