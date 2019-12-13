@@ -248,48 +248,44 @@ jQuery(document).ready(function(){
 		.click(function(){
 			var form = jQuery(this).parents('form.wpcf7-form')
 				, error = form.find('ul.error-messages');
-				console.log( 'エラーの中身=%o' , error);
 			error.empty();
-			console.log('フォームの中身=%o' , form);
 			form.find('dl').removeClass('error');
 			form.find('.wpcf7-form-control-wrap')
 			.each(function(){
 				var child = jQuery(this).children(0)
-					, title = child.parents('dl').find('dt').text();
-					console.log('これがタイトルの中身=%o' , title);
+				, title = child.parents('dl').find('dt').text();
+				// ,length = child.parents('dl').find('dt').length;
+				 //    console.log(child.parents('dl').find('dt'));
+					// console.log('これがタイトルの中身=%o' , title);
+					// console.log('これがタイトルの個数=%o' , title.length);
+					// console.log('これがdtの個数=%o',length);
 				if (title.length == 0){
 					title = child.parents('p').find('.title' ,'<br>').text();
 				}
+
 				if (child.hasClass('wpcf7-text')){
 					if (child.hasClass('wpcf7-validates-as-required') && child.val().length == 0){
-						error.append(jQuery('<li>').text(option.validates.required.before + title.replace('必須', '') + option.validates.required.after));
+						error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 						jQuery(this).addClass('error');
-
-						console.log('エラーがどこにつくのか知りラたい=%o' , this);
-						
-						console.log(option);
-
-
-
-					} else if (child.hasClass('wpcf7-validates-as-email') && ( ! child.val().match(option.validates.email.match))){
-						.error.append(jQuery('<li>').text(option.validates.email.before + title.replace('必須', '') + option.validates.email.after));
-						jQuery(this).addClass('error');
-						console.log('エラーがどこにつくのか知りラたい=%o' , this);
-
 					}
+
+				} else if (child.hasClass('wpcf7-validates-as-email') && ( ! child.val().match(option.validates.email.match))){
+						error.append(jQuery('<li>').text(option.validates.email.before + title + option.validates.email.after));
+						jQuery(this).addClass('error');
+				
 				} else if (child.get(0).tagName.toLowerCase() == 'textarea'){
 					if (child.hasClass('wpcf7-validates-as-required') && child.val().length == 0){
-						error.append(jQuery('<li>').text(option.validates.required.before + title.replace('必須', '') + option.validates.required.after));
+						error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 						jQuery(this).addClass('error');
 					}
 				} else if (child.hasClass('wpcf7-number')){
 					if (child.hasClass('wpcf7-validates-as-required') && child.val().length == 0){
-						error.append(jQuery('<li>').text(option.validates.required.before + title.replace('必須', '') + option.validates.required.after));
+						error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 						jQuery(this).addClass('error');
 					}
 				} else if (child.hasClass('wpcf7-select')){
 					if (child.hasClass('wpcf7-validates-as-required') && (( ! child.val()) || child.val().length == 0 || child.val() == '---')){
-						error.append(jQuery('<li>').text(option.validates.required.before + title.replace('必須', '') + option.validates.required.after));
+						error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 						jQuery(this).addClass('error');
 					}
 				} if (child.hasClass('wpcf7-radio')){
@@ -303,7 +299,7 @@ jQuery(document).ready(function(){
 							}
 						});
 						if ( ! flg){
-							error.append(jQuery('<li>').text(option.validates.required.before + title.replace('必須', '') + option.validates.required.after));
+							error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 							jQuery(this).addClass('error');
 						}
 					}
@@ -318,7 +314,7 @@ jQuery(document).ready(function(){
 							}
 						});
 						if ( ! flg){
-							error.append(jQuery('<li>').text(option.validates.required.before + title.replace('必須', '') + option.validates.required.after));
+							error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 							jQuery(this).addClass('error');
 						}
 					}
