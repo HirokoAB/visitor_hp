@@ -1,0 +1,134 @@
+<div id="wrap_contact">
+[response]
+ <p class="txt_edit">
+        このたびは、フィールドミュージアムの体験活動にお申し込みいただきありがとうございます。<br>
+        以下の項目を入力していただき、確認画面へボタンを押してください。
+</p>
+
+    <p class="txt_confirm">
+        入力内容をご確認後、「送信する」ボタンを押してください。
+    </p>
+
+    <p class="txt_sent">
+　　　　　お申し込みありがとうございました。
+    </p>
+
+    <p class="wrap_error"></p>
+    
+   <dl class="program-detail">
+    <dt>参加日</dt>
+      <dd>[date* date-1 min:2019-12-01 id:day class:contact-day placeholder "参加日希望日を入力してくだい"]</dd>
+    <dt>プログラム</dt>
+    <dd>[radio program id:program class:wpcf7-validates-as-required 
+ "スノーケリング" "SUP" "カヤック" "トレイル "]</dd>
+  </dl>
+  
+  <dl class="personal-info">
+    <dt>お名前</dt>
+    <dd>[text* your-name id:name class:contact-name placeholder "お名前をご記入ください"]</dd>
+    <dt>ふりがな</dt>
+    <dd>[text*  hurigana id:hurigana class:contact-hurigana placeholder "ふりがなをご記入ください"]</dd>
+    <dt>生年月日</dt>
+    <dd>[date* birtday min:1900-01-01 id:birth-date class:birth-date]</dd>
+    <dt>血液型</dt>
+    <dd>[radio blood-type class:wpcf7-validates-as-required "A" "B" "O" "AB "] [checkbox rh id:blood-rh class:contact-rh "※RH型"]</dd>
+  </dl>
+
+  <dl class="adress">
+    <dt>住所</dt>
+    <dd>[text* address id:address class:contact-address placeholder"住所をご記入ください"]</dd>
+    <dt>TEL</dt>
+    <dd>[tel* tel id:tell class:contact-tell placeholder "お電話番号"]</dd>
+    <dt>E-mail</dt>
+    <dd>[email* email id:mail class:contact-mail placeholder "メールアドレス"]</dd>  
+  </dl>
+
+
+  <dl class="experience">
+    <dt>今回ご希望のプログラムのご経験はありますか？</dt>
+    <dd class="flexbox">[checkbox experience id:experience class:contact-experience exclusive "初めて" "過去に経験あり"][text times placeholder"回"]</dd>
+  </dl>
+  
+  <dl class="physical-info">
+    <dt>身長</dt>
+    <dd>[text* height id:height class:contact-height placeholder"cm"]</dd>
+    <dt>体重</dt>
+    <dd>[text* weight id:weitght class:contact-weight placeholder"kg"]</dd>
+    <dt>足のサイズ</dt>
+    <dd>[text* foot-size id:foot class:contact-foot placeholder"cm"]</dd>
+    <dt>視力</dt>
+    <dd>[text* eye-l id:eye-l class:contact-eye-l placeholder"左"]</dd>
+    <dd>[text* eye-r id:eye-r class:contact-eye-r placeholder"右"]</dd>
+  </dl>
+
+
+  <dl class="emergency-adress">
+    <dt>緊急連絡先</dt>
+    <dd>[text* emergency-contact id:emergency class:contact-emergency placeholder"緊急連絡先お名前"]</dd>
+    <dt>続柄</dt>
+    <dd>[text* emergenc-relatives id:relatives class:contact-relatives placeholder"族柄をご記入ください"]</dd>
+    <dt>電話番号</dt>
+    <dd>[text* emergency-contact id:relatives-num class:contact-relatives-num placeholder"緊急連絡先お電話番号"]</dd>
+  </dl>
+
+  <p>※以下の質問の中で、１つでも「はい」があった場合や、５５歳以上で運動に慣れていない方は、運動をはじめる前に医師とご相談して下さい。</p>
+  <dl class="helth-check">
+    <dt>耳鼻系統に疾患がありますか？</dt>
+    <dd>[radio helth-check1 id:helth-check1 class:contact-helth-cehck "はい" "いいえ"]</dd>
+    <dt>気管や肺に疾患がありますか？</dt>
+    <dd>[radio helth-check2 id:helth-check2 class:contact-helth-cehck "はい" "いいえ"]</dd>
+    <dt>心臓や血管に疾患がありますか？</dt>
+    <dd>[radio helth-check3 id:helth-check3 class:contact-helth-cehck "はい" "いいえ"]</dd>
+    <dt>血圧に異常がありますか？</dt>
+    <dd>[radio helth-check4 id:helth-check4 class:contact-helth-cehck "はい" "いいえ"]</dd>
+    <dt>神経系統に疾患がありますか？</dt>
+    <dd>[radio helth-check5 id:helth-check5 class:contact-helth-cehck "はい" "いいえ"]</dd>
+    <dt>今までに医師に、心臓に問題があるから許可した運動以外は行ってはいけない、と言われたことがありますか？</dt>
+    <dd>[radio helth-check6 id:helth-check6 class:contact-helth-cehck "はい" "いいえ"]</dd>
+    <dt>運動中に胸の痛みを感じますか？</dt>
+    <dd>[radio helth-check7 id:helth-check7 class:contact-helth-cehck "はい" "いいえ"]</dd>
+    <dt>めまいのために、気を失ったことがありますか？</dt>
+    <dd>[radio helth-check8 id:helth-check8 class:contact-helth-cehck "はい" "いいえ"]</dd>
+    <dt>現在、血圧や心臓のお薬を飲んでいますか？</dt>
+    <dd>[radio helth-check9 id:helth-check9 class:contact-helth-cehck "はい" "いいえ"]</dd>
+    <dt>運動で悪くなるような骨や関節の問題がありますか？</dt>
+    <dd>[radio helth-check10 id:helth-check10 class:contact-helth-cehck "はい" "いいえ"]</dd>
+    <dt>前述の質問のほかに、運動ができない理由がありますか？</dt>
+    <dd>[radio helth-check11 id:helth-check11 class:contact-helth-cehck "はい" "いいえ"]</dd>
+
+  </dl>
+<div class="wpcf7-content wpcf7-form-control-wrap-wrap">  
+    <h2 class="wpcf7-content">＜個人情報の保護について＞</h2> 
+        <p>FM運営協議会がプログラムをおこなうにあたり、お客様の個人情報をお教えいただくことは、安全管理および円滑な運営上非常に重要です。FM運営協議会は、お客様の個人情報がプライバシーを構成する重要な情報であり、その保護の重要性を認識し、その適切な管理を行うことが社会的責務と考えております。そこでFM運営協議会は、この申込書などを通じてお客様から個人情報をご提供いただいたときは、別途定める弊社個人情報保護指針に則り、お客様の個人情報を取り扱うことに努めます。</p>
+    <h2>―　同意事項　―</h2>
+        <p>私は、FM運営協議会が個人情報保護指針に則り私自身の情報を扱うことを許可します。またFM運営協議会およびその指示に基づく関係者が、プログラム中の私自身の写真・音声を使用、複製、配布することを許可します。</p>
+    
+      <h2><注意事項></h2>
+      <ol>
+        <li>事故が生じた場合は、主催者側では応急処置を含む緊急体制に則った処置を行います。しかし限界があることをご了承いただき、ご自身で健康状態および危険に対して十分注意する意識を持ってご参加ください。主催者側では傷害保険をかけていますが、ご自身でも加入されることをお勧めします。</li>
+        <li>指導員に従って行動してください。従っていただけずに事故が起こったときには、主催者側は責任を負い兼ねますとともに、加入している保険の適用が受けられない場合がありますのでご注意ください。</li>
+        <li>体調がすぐれないなど不安のある場合は、プログラムを開始する直前であっても、必ず指導員に報告してください。</li>
+        <li>天候の悪化や、他の参加者の事故などにより、プログラムを途中で中止する可能性があることをご了承ください。</li>
+        <li>炎天下においては、過度の日焼けや脱水症状などが起こりやすいので、帽子、ペットボトル入りの飲料水、日焼け止めをご用意ください。また季節を問わずハイポサーミア(急性低体温症)に陥る恐れもありますので、着衣を準備し、適宜着用してください。</li>
+        <li>トレイルでは、濡れても良い、しっかりとした歩きやすい靴をお履き下さい。</li>
+    </ol>
+    <h2>―　誓　　　約　　　書　―</h2>
+        <p>私は、FM運営協議会プログラムの素晴らしさ、楽しさと同時にその危険性についても十分認識しております。このプログラムの参加に際して常にセルフエイド、自己責任に基づいて行動し、カリキュラムに関連して生じる水生生物などによる事故、転落による怪我を含む全てのリスクを認識した上で、参加を希望します。同時に地域のかけがえのない自然や文化、歴史に常に敬意を持って接し、決してむやみな殺生や捕獲、採取を一切行わないこと、文化や歴史に悪しき影響を及ぼさないこと、また指導員の指示に従いルールとマナーを遵守して慎重に行動することをここに誓います。</p>
+</div>
+
+<dl class="signature">
+    <dt>参加者署名</dt>
+    <dd>[text signature id:signature class:contact-signatune placeholder "参加者様のお名前をご記入ください"]</dd>
+    <dt>同意日付</dt>
+    <dd>[date signature-date min:1900-01-01 id:signature-date class:signature-date]</dd>
+    <dt>未成年者の場合<br>保護者署名</dt>
+    <dd>[text guardian-signature id:signature-guardian class:contact-guardian placeholder "保護者様のお名前をご記入ください"]</dd>
+    <dt>同意日付</dt>
+    <dd>[date guardian-signature-date min:1900-01-01 id:guardian-date class:contact-guardian-date]</dd>
+</dl>
+
+
+<p class="submit-button">[submit "送信する"]</p>
+
+
+</div>
