@@ -17,16 +17,15 @@ jQuery(document).ready(function(){
 				},
 			}
 		],
-		required_text:
 		 validates : {
 		 	required : {
-		 		before : 'ここ',
-		 		after : 'は必須項目です。'
+		 		before : '',
+		 		after : 'これ反映されてる？'
 		 	},
 		 	email : {
-		 		match : /^[A-Za-z0-9]+[\w-]+@[\w\.-]+\.\w{2,}$/,
+		 		match : /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
 		 		before : '',
-		 		after : 'が正しい形式ではありません（メールアドレスに「.」を使用することはできません）'
+		 		after : 'が正しい形式ではありません'
 		 	}
 		 }
 	};
@@ -47,15 +46,14 @@ jQuery(document).ready(function(){
 
 	if ( ! flg) return;
 
+
 	jQuery('form.wpcf7-form')
 	.each(function(){
 		
 		jQuery(this).find('.wpcf7-form-control-wrap')
 		.each(function(){
 			
-			var child = jQuery(this).children(0);
-			console.log( 'child' ) ;
-			
+			var child = jQuery(this).children(0);		
 			if (child.hasClass('wpcf7-text')){
 				jQuery(this)
 				.after(
@@ -110,6 +108,7 @@ jQuery(document).ready(function(){
 				.change()
 				;
 			} if (child.hasClass('wpcf7-radio')){
+				jQuery(this).addClass('wpcf7-validates-as-required');
 				jQuery(this)
 				.after(
 					jQuery('<span>').addClass('wpcf7-form-control-wrap-confirm')
@@ -148,8 +147,57 @@ jQuery(document).ready(function(){
 				.change()
 				;
 			}
+			if (child.hasClass('wpcf7-date')){
+				jQuery(this)
+				.after(
+					jQuery('<span>').addClass('wpcf7-form-control-wrap-confirm')
+				);
+				child
+				.change(function(){
+					jQuery(this).parent().next().text(
+						jQuery(this).val()
+					);
+				})
+				.change()
+				;
+			}
 			
 		});
+		
+		jQuery(function(){jQuery(this).find('.wpcf7-content')
+			.each(function(){
+			    let con = jQuery(this).children(0);
+		if (con.hasClass('.wpcf7-content')){
+			
+			jQuery(this)
+				.after(
+					jQuery('<span>').addClass('wpcf7-form-control-wrap-confirm')
+				);
+				child
+				.change(function(){
+					jQuery(this).parent().next().html(
+						jQuery('<span>').text(jQuery(this).val()).html().replace(/\n/g, '<br />')
+					);
+				})
+				.change()
+				;
+
+
+			jQuery(con)
+			 .after(
+			 	jQuery('<span>').addClass('wpcf7-form-control-wrap'))
+			 con
+			 .change(function(){
+			 	jQuery(con).parent().next().text(
+		 		jQuery(con).val()
+				);
+				 })
+			 .change()
+			 ;
+			 }
+		})
+	});
+
 		
 		jQuery('.wrap_error')
 		.prepend(
@@ -158,7 +206,7 @@ jQuery(document).ready(function(){
 		
 		jQuery(this).find('.' + option.page.button.areaClassName)
 		.addClass('buttons-area');
-		
+
 		jQuery(this).find('.buttons-area')
 		.prepend(
 			option.page.button.rewrite
@@ -168,6 +216,8 @@ jQuery(document).ready(function(){
 			.addClass('buttons-area-confirm')
 			.html(option.page.button.confirm)
 		);
+
+		console.log('オプションの中身=%o' , this);
 		
 		jQuery(this).addClass('wpcf7-form-mode-edit');
 		jQuery(this).find('.wpcf7-form-control-wrap-confirm').hide();
@@ -198,22 +248,34 @@ jQuery(document).ready(function(){
 		.click(function(){
 			var form = jQuery(this).parents('form.wpcf7-form')
 				, error = form.find('ul.error-messages');
+				console.log( 'エラーの中身=%o' , error);
 			error.empty();
-			form.find('table tr').removeClass('error');
+			console.log('フォームの中身=%o' , form);
+			form.find('dl').removeClass('error');
 			form.find('.wpcf7-form-control-wrap')
 			.each(function(){
 				var child = jQuery(this).children(0)
-					, title = child.parents('tr').find('th').text();
+					, title = child.parents('dl').find('dt').text();
+					console.log('これがタイトルの中身=%o' , title);
 				if (title.length == 0){
-					title = child.parents('p').find('.title').text();
+					title = child.parents('p').find('.title' ,'<br>').text();
 				}
 				if (child.hasClass('wpcf7-text')){
 					if (child.hasClass('wpcf7-validates-as-required') && child.val().length == 0){
 						error.append(jQuery('<li>').text(option.validates.required.before + title.replace('必須', '') + option.validates.required.after));
 						jQuery(this).addClass('error');
+
+						console.log('エラーがどこにつくのか知りラたい=%o' , this);
+						
+						console.log(option);
+
+
+
 					} else if (child.hasClass('wpcf7-validates-as-email') && ( ! child.val().match(option.validates.email.match))){
-						error.append(jQuery('<li>').text(option.validates.email.before + title.replace('必須', '') + option.validates.email.after));
+						.error.append(jQuery('<li>').text(option.validates.email.before + title.replace('必須', '') + option.validates.email.after));
 						jQuery(this).addClass('error');
+						console.log('エラーがどこにつくのか知りラたい=%o' , this);
+
 					}
 				} else if (child.get(0).tagName.toLowerCase() == 'textarea'){
 					if (child.hasClass('wpcf7-validates-as-required') && child.val().length == 0){
@@ -261,6 +323,7 @@ jQuery(document).ready(function(){
 						}
 					}
 				}
+
 			});
 			if (error.children().length > 0){
 				error.show();
@@ -271,13 +334,15 @@ jQuery(document).ready(function(){
 				form.find('.buttons-area-confirm').hide();
 				form.find('.buttons-area').show();
 			}
+
 			jQuery('html,body').animate({ scrollTop: form.offset().top - 80}, 'slow', null);
 			return false;
 		});
 		
 	});
 	
-});
+ });
+
 
 
 jQuery(document).ready(function(){
@@ -287,3 +352,6 @@ jQuery(document).ready(function(){
     $('.button-rewrite').hide();
   });
 });
+
+
+

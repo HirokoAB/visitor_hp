@@ -61,6 +61,7 @@ function pagination($pages = '', $range = 2)
 	}
 }
 
+//フォームお問い合わせページの読み込み
 function contact_script(){
 	if(is_page(1097)){
 		wp_enqueue_script('contactform7confirmjs','http://kawatouminovisitorcenter.jp/umi/js/contact-form7-confirm.js');
@@ -69,8 +70,18 @@ function contact_script(){
 
 	}
 }
-
+//ラジオボタンの必須を有効にする
 add_action('wp_head' ,'contact_script');
+
+//　function.phpに記述
+
+add_action( 'wpcf7_init', 'wpcf7_add_shortcode_radio_required' );
+function wpcf7_add_shortcode_radio_required(){
+wpcf7_add_shortcode( array('radio*'), 'wpcf7_checkbox_form_tag_handler', true );
+}
+add_filter( 'wpcf7_validate_radio*', 'wpcf7_checkbox_validation_filter', 10, 2 );
+
+
 
 
 ?>

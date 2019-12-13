@@ -60,4 +60,12 @@ function pagination($pages = '', $range = 2)
 		echo "</div>\n";
 	}
 }
+
+//　お問い合わせ内容のラジオボタんを必須項目に設定する
+add_action( 'wpcf7_init', 'wpcf7_add_shortcode_radio_required' );
+function wpcf7_add_shortcode_radio_required() {
+wpcf7_add_shortcode( array( 'radio*' ),
+'wpcf7_checkbox_form_tag_handler', true );
+}
+add_filter( 'wpcf7_validate_radio*', 'wpcf7_checkbox_validation_filter', 10, 2 );
 ?>
