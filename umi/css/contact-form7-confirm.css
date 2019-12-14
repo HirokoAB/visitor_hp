@@ -40,8 +40,10 @@ form.wpcf7-form ul.error-messages li{
 /*
  * 入力チェックに引っかかったときに tr.addClass('error')
  */
-form.wpcf7-form  dt dd .error input,
-form.wpcf7-form  dt dd .error select{
+form.wpcf7-form  dl dd  .error input,
+form.wpcf7-form  dl dd  .error select,
+form.wpcf7-form  dl dd  .error span
+{
 	background-color:#FFC2C2;
 }
 
@@ -69,6 +71,10 @@ form.wpcf7-form p.buttons-area .button-rewrite{
 }
 form.wpcf7-form p.buttons-area .wpcf7-submit{
 	margin-left:20px;
+}
+
+.wpcf7-mail-sent-ok{
+display:none !important;
 }
 
 /**/

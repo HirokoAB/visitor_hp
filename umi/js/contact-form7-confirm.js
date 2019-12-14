@@ -20,7 +20,7 @@ jQuery(document).ready(function(){
 		 validates : {
 		 	required : {
 		 		before : '',
-		 		after : 'これ反映されてる？'
+		 		after : 'が入力されていません'
 		 	},
 		 	email : {
 		 		match : /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
@@ -46,7 +46,7 @@ jQuery(document).ready(function(){
 
 	if ( ! flg) return;
 
-
+	//記述雨を残すための記述
 	jQuery('form.wpcf7-form')
 	.each(function(){
 		
@@ -163,10 +163,14 @@ jQuery(document).ready(function(){
 			}
 			
 		});
+
+
+
+
 		
 		jQuery(function(){jQuery(this).find('.wpcf7-content')
 			.each(function(){
-			    let con = jQuery(this).children(0);
+			    var con = jQuery(this).children(0);
 		if (con.hasClass('.wpcf7-content')){
 			
 			jQuery(this)
@@ -216,8 +220,9 @@ jQuery(document).ready(function(){
 			.addClass('buttons-area-confirm')
 			.html(option.page.button.confirm)
 		);
+		 var ermsg = this;
 
-		console.log('オプションの中身=%o' , this);
+		// console.log('ermsgの中身=%o' , ermsg);
 		
 		jQuery(this).addClass('wpcf7-form-mode-edit');
 		jQuery(this).find('.wpcf7-form-control-wrap-confirm').hide();
@@ -256,39 +261,40 @@ jQuery(document).ready(function(){
 				, title = child.parents('dl').find('dt').text();
 				// ,length = child.parents('dl').find('dt').length;
 				 //    console.log(child.parents('dl').find('dt'));
-					// console.log('これがタイトルの中身=%o' , title);
+					 // console.log('これがchildの中身=%o' , child);
 					// console.log('これがタイトルの個数=%o' , title.length);
-					// console.log('これがdtの個数=%o',length);
+					// console.log('これがdtの散るどれ=%o',child);
 				if (title.length == 0){
 					title = child.parents('p').find('.title' ,'<br>').text();
 				}
 
 				if (child.hasClass('wpcf7-text')){
 					if (child.hasClass('wpcf7-validates-as-required') && child.val().length == 0){
-						error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
+						 error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 						jQuery(this).addClass('error');
+						console.log('これがテキストのThis=%o',this);
 					}
 
 				} else if (child.hasClass('wpcf7-validates-as-email') && ( ! child.val().match(option.validates.email.match))){
-						error.append(jQuery('<li>').text(option.validates.email.before + title + option.validates.email.after));
+						 error.append(jQuery('<li>').text(option.validates.email.before + title + option.validates.email.after));
 						jQuery(this).addClass('error');
 				
 				} else if (child.get(0).tagName.toLowerCase() == 'textarea'){
 					if (child.hasClass('wpcf7-validates-as-required') && child.val().length == 0){
-						error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
+						 error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 						jQuery(this).addClass('error');
 					}
 				} else if (child.hasClass('wpcf7-number')){
 					if (child.hasClass('wpcf7-validates-as-required') && child.val().length == 0){
-						error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
+						 error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 						jQuery(this).addClass('error');
 					}
 				} else if (child.hasClass('wpcf7-select')){
 					if (child.hasClass('wpcf7-validates-as-required') && (( ! child.val()) || child.val().length == 0 || child.val() == '---')){
-						error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
+						 error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 						jQuery(this).addClass('error');
 					}
-				} if (child.hasClass('wpcf7-radio')){
+				} else if (child.hasClass('wpcf7-radio')){
 					if (child.hasClass('wpcf7-validates-as-required')){
 						var flg = false;
 						jQuery(this).find('input[type="radio"]')
@@ -299,11 +305,11 @@ jQuery(document).ready(function(){
 							}
 						});
 						if ( ! flg){
-							error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
+							 error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 							jQuery(this).addClass('error');
 						}
 					}
-				} if (child.hasClass('wpcf7-checkbox')){
+				} else if (child.hasClass('wpcf7-checkbox')){
 					if (child.hasClass('wpcf7-validates-as-required')){
 						var flg = false;
 						jQuery(this).find('input[type="checkbox"]')
@@ -314,14 +320,18 @@ jQuery(document).ready(function(){
 							}
 						});
 						if ( ! flg){
-							error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
+							 error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 							jQuery(this).addClass('error');
 						}
 					}
 				}
 
+
 			});
-			if (error.children().length > 0){
+
+			if(error.children().length > 0){
+				error.empty();
+				error.text('赤く色がついている入力事項をご確認ください');
 				error.show();
 			} else {
 				form.addClass('wpcf7-form-mode-confirm').removeClass('wpcf7-form-mode-edit');
@@ -330,6 +340,8 @@ jQuery(document).ready(function(){
 				form.find('.buttons-area-confirm').hide();
 				form.find('.buttons-area').show();
 			}
+
+			console.log('エラー下部errorの中身=%o' , error);
 
 			jQuery('html,body').animate({ scrollTop: form.offset().top - 80}, 'slow', null);
 			return false;
@@ -345,9 +357,12 @@ jQuery(document).ready(function(){
   jQuery('.wpcf7-submit').click(function(e) {
     $('html,body').animate({scrollTop: $('form').offset().top - 80}, 'slow', null);
     //$('html,body').animate({scrollTop: position}, 700);
+    $('.wpcf7-mail-sent-ok').remove();
     $('.button-rewrite').hide();
   });
 });
+
+
 
 
 
