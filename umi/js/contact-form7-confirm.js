@@ -357,7 +357,6 @@ jQuery(document).ready(function(){
   jQuery('.wpcf7-submit').click(function(e) {
     $('html,body').animate({scrollTop: $('form').offset().top - 80}, 'slow', null);
     //$('html,body').animate({scrollTop: position}, 700);
-    $('.wpcf7-mail-sent-ok').remove();
     $('.button-rewrite').hide();
   });
 });
