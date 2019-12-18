@@ -53,7 +53,15 @@ jQuery(document).ready(function(){
 		jQuery(this).find('.wpcf7-form-control-wrap')
 		.each(function(){
 			
-			var child = jQuery(this).children(0);		
+			var child = jQuery(this).children(0);
+			if (child.hasClass('wpcf7-text' && 'contact-address')){
+				jQuery('.address > input').addClass('p-region p-locality p-street-address p-extended-address');
+				console.log(this);
+			}else if(child.hasClass('wpcf7-text' && 'contact-postalcode')){
+				jQuery('.postal-code > input').addClass('p-postal-code');
+				console.log(this);
+
+			};	
 			if (child.hasClass('wpcf7-text')){
 				jQuery(this)
 				.after(
@@ -225,6 +233,10 @@ jQuery(document).ready(function(){
 		// console.log('ermsgの中身=%o' , ermsg);
 		
 		jQuery(this).addClass('wpcf7-form-mode-edit');
+		jQuery(this).addClass('h-adr');
+		jQuery('.h-adr').prepend(
+			jQuery('<span>').addClass('p-country-name').text('Japan').css('display','none')
+		);
 		jQuery(this).find('.wpcf7-form-control-wrap-confirm').hide();
 		jQuery(this).find('.wpcf7-form-control-wrap').show();
 		jQuery(this).find('.buttons-area').hide();
@@ -290,7 +302,7 @@ jQuery(document).ready(function(){
 						jQuery(this).addClass('error');
 					}
 				} else if (child.hasClass('wpcf7-select')){
-					if (child.hasClass('wpcf7-validates-as-required') && (( ! child.val()) || child.val().length == 0 || child.val() == '---')){
+					if (child.hasClass('wpcf7-validates-as-required') && (( ! child.val()) || child.val().length == 0 || child.val() == '選択してください')){
 						 error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 						jQuery(this).addClass('error');
 					}
