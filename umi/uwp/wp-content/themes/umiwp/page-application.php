@@ -9,7 +9,7 @@ Template Name: フィールドミュージアム申込書
 	<div class="container-fluid inner animated fadeInUp delay-05s">
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
-				<h2><img src="http://kawatouminovisitorcenter.jp/umi/img/title_con01.png" alt="お問い合わせフォーム" class="center-block img-responsive"></h2>
+				<h2><img src="http://kawatouminovisitorcenter.jp/umi/img/title_fmlogo.png" alt="お問い合わせフォーム" class="center-block img-responsive"></h2>
 				<div class="con-box line-box">
 			
 <?php	if (have_posts()) : // WordPress ループ

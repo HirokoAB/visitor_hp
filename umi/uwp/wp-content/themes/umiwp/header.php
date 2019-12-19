@@ -17,6 +17,7 @@ if (!(ereg("Windows",$_SERVER['HTTP_USER_AGENT']) && ereg("MSIE",$_SERVER['HTTP_
 
 <meta name="description" content="<?php bloginfo('description'); ?>" />
 <link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
 <link href="http://kawatouminovisitorcenter.jp/umi/css/bootstrap.min.css" rel="stylesheet">
 <link href="http://kawatouminovisitorcenter.jp/umi/css/drawer.css" rel="stylesheet">
 <!--<link href="css/flexslider.css" rel="stylesheet">-->
