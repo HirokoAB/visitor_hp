@@ -64,8 +64,8 @@ function pagination($pages = '', $range = 2)
 //フォームお問い合わせページの読み込み
 function contact_script(){
 	if(is_page(1097)){
-		wp_enqueue_script('contactform7confirmjs','http://kawatouminovisitorcenter.jp/umi/js/contact-form7-confirm.js');
 		wp_enqueue_script('yubinbango.js','http://kawatouminovisitorcenter.jp/umi/js/yubinbango.js');
+		wp_enqueue_script('contactform7confirmjs','http://kawatouminovisitorcenter.jp/umi/js/contact-form7-confirm.js');
 		wp_enqueue_style('contactform7confirmcss','http://kawatouminovisitorcenter.jp/umi/css/contact-form7-confirm.css');
 
 	}
