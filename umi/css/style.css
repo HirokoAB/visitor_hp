@@ -1858,6 +1858,68 @@ text-align:center;
 }
 
 
+#wrap_contact select{
+    width:100%;
+    height:120%;
+    outline:none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    background: none transparent;
+    vertical-align: middle;
+    font-size: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align:center;
+}
+#wrap_contact select option{
+  background-color: #fff;
+  color: #333;
+}
+#wrap_contact select::-ms-expand {
+  display: none;
+}
+#wrap_contact select:-moz-focusring { 
+  color: transparent; 
+  text-shadow: 0 0 0 #828c9a;
+}
+
+
+#wrap_contact{
+  cursor: pointer;
+  color: #828c9a;
+  padding-right: 15px;
+  font-weight: normal;
+}
+#wrap_contact .lever:before{
+  content:"\f372";
+  font-family: "IonIcons";
+  margin-right: 7px;
+  color: #ccc;
+  font-size: 18px;
+  position: relative;
+  top: 2px;
+}
+#wrap_contact input[type="checkbox"]:checked + .lever{
+  color: #4788bf;
+}
+#wrap_contact input[type="checkbox"]:checked + .lever:before{
+  content:"\f373";
+  font-family: "IonIcons";
+  color: #4788bf;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
