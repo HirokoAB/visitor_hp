@@ -1696,6 +1696,10 @@ contact
 contact_追記_フィールドミュジアム入力画面
 ========================================================================== */
 #wrap_contact{
+	font-family: "Noto Sans JP";
+}
+
+#wrap_contact{
 width: 700px;
 margin:auto;
 }
@@ -1704,6 +1708,12 @@ margin:auto;
 /*	vertical-align:middle;*/
 }
 
+#wrap_contact .txt_edit,
+#wrap_contact .txt_sent,
+#wrap_contact .confirm{
+/*	font-family: "Noto Sans JP";*/
+	font-size:1.5rem;
+	}
 #wrap_contact dl{
 width: 100%;
 border-collapse: collapse;
@@ -1717,7 +1727,7 @@ letter-spacing:0.3rem;
 #wrap_contact dl dd{
 padding: 0.5em;
 text-align: left;
-vertical-align: top;
+vertical-align: middle;
 border: solid #CCC;
 border-width: 1px;
 }
@@ -1726,6 +1736,8 @@ border-width: 1px;
 width:20%;
 float:left;
 clear:left;
+vertical-align: middle;
+font-weight:900;
 }
 
 #wrap_contact dl dd{
@@ -1804,14 +1816,24 @@ margin-left: 10px;
 border-radius: 3px;
 letter-spacing: 0.2em;
 }
+/*#wrap_contact .flexbox p{
+	display:flex !important;
+	justify-content:center;
+}*/
 
-#wrap_contact .experience .flexbox
-/*#wrap_contact .physical-info .flexbox*/
+#wrap_contact .flexbox p input{
+	margin-right: 0px;
+}
+
+#wrap_contact .experience .flexbox,
+#wrap_contact .flexbox
 {
  display:flex;
  align-items:center;
 }
-
+#wrap_contact .flexbox{
+	justify-content:center;
+}
 #wrap_contact .experience .times{
 	width:20%;
 }
@@ -1839,7 +1861,7 @@ letter-spacing: 0.2em;
   display:block;
 }
 
-div.wpcf7-mail-sent-ok {
+#wrap_contact div.wpcf7-mail-sent-ok {
     border: none;
     padding:0;
     margin:0;
@@ -1857,9 +1879,8 @@ text-align:center;
 	margin-top:20px;
 }
 
-
 #wrap_contact select{
-    width:100%;
+    width:70%;
     height:120%;
     outline:none;
     text-indent: 0.01px;
@@ -1872,10 +1893,13 @@ text-align:center;
     -moz-appearance: none;
     appearance: none;
     text-align:center;
+    padding: 1% 3%;
 }
+
 #wrap_contact select option{
   background-color: #fff;
   color: #333;
+  text-align:center;
 }
 #wrap_contact select::-ms-expand {
   display: none;
@@ -1884,12 +1908,19 @@ text-align:center;
   color: transparent; 
   text-shadow: 0 0 0 #828c9a;
 }
-
-
+#wrap_contact input[type="date"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+ 
+#wrap_contact input[type="date"]::-webkit-clear-button{
+    -webkit-appearance: none;
+}
+#wrap_contact .ajax-loader{
+	display:none;
+}
 #wrap_contact{
   cursor: pointer;
-  color: #828c9a;
-  padding-right: 15px;
+  color: #333;
   font-weight: normal;
 }
 #wrap_contact .lever:before{
@@ -1910,8 +1941,12 @@ text-align:center;
   color: #4788bf;
 }
 
-
-
+#wrap_contact p img{
+	 transform: rotate( -90deg );
+	 margin-top:30px;
+	 width:100px;
+	 
+}
 
 
 
@@ -1986,10 +2021,10 @@ margin-bottom:0px;
 }
 
  .wpcf7-form-mode-confirm .buttons-area{
-    display: flex !important;
+/*    display: flex !important;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
 }
 
 form.wpcf7-form p.buttons-area .button-rewrite,
