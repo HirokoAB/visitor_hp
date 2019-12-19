@@ -3,7 +3,19 @@
  * this Library is licensed. http://aulta.jp/library/
  * http://aulta.jp/library/wordpress/contactForm7Confirm.html
  * last update: 2012-02-15, 0.0.1.
+
  */
+
+ function min(date, format) {
+ 
+    format = format.replace(/YYYY/, date.getFullYear());
+    format = format.replace(/MM/, date.getMonth() + 1);
+    format = format.replace(/DD/, date.getDate());
+ 
+    return format;
+}
+
+
 jQuery(document).ready(function(){
 	
 	var option = {
@@ -44,6 +56,7 @@ jQuery(document).ready(function(){
 	}
 
 
+
 	if ( ! flg) return;
 
 	//記述雨を残すための記述
@@ -56,11 +69,8 @@ jQuery(document).ready(function(){
 			var child = jQuery(this).children(0);
 			if (child.hasClass('wpcf7-text' && 'contact-address')){
 				jQuery('.address > input').addClass('p-region p-locality p-street-address p-extended-address');
-				console.log(this);
 			}else if(child.hasClass('wpcf7-text' && 'contact-postalcode')){
 				jQuery('.postal-code > input').addClass('p-postal-code');
-				console.log(this);
-
 			};	
 			if (child.hasClass('wpcf7-text')){
 				jQuery(this)
@@ -75,6 +85,8 @@ jQuery(document).ready(function(){
 				})
 				.change()
 				;
+				var address = $(this);
+				console.log('これがアドレスのThis=%o',address);
 			} else if (child.get(0).tagName.toLowerCase() == 'textarea'){
 				jQuery(this)
 				.after(
@@ -160,6 +172,12 @@ jQuery(document).ready(function(){
 				.after(
 					jQuery('<span>').addClass('wpcf7-form-control-wrap-confirm')
 				);
+				if ($(this).hasClass('date-1'||'signature-date'||'guardian-signature-date')){
+						$( '.wpcf7-form-control-wrap>input').attr('min',(min(new Date(),'YYYY-MM-DD')));
+                }
+						console.log(child);
+					
+					console.log(this);
 				child
 				.change(function(){
 					jQuery(this).parent().next().text(
@@ -284,7 +302,7 @@ jQuery(document).ready(function(){
 					if (child.hasClass('wpcf7-validates-as-required') && child.val().length == 0){
 						 error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 						jQuery(this).addClass('error');
-						console.log('これがテキストのThis=%o',this);
+						// console.log('これがテキストのThis=%o',this);
 					}
 
 				} else if (child.hasClass('wpcf7-validates-as-email') && ( ! child.val().match(option.validates.email.match))){
@@ -296,6 +314,7 @@ jQuery(document).ready(function(){
 						 error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 						jQuery(this).addClass('error');
 					}
+
 				} else if (child.hasClass('wpcf7-number')){
 					if (child.hasClass('wpcf7-validates-as-required') && child.val().length == 0){
 						 error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
@@ -353,7 +372,11 @@ jQuery(document).ready(function(){
 				form.find('.buttons-area').show();
 			}
 
-			console.log('エラー下部errorの中身=%o' , error);
+			if(form.find('.buttons-area')){
+				$('.buttons-area').wrap($('<div>').addClass('wrap_button'));
+			}
+
+			console.log('エラー下部errorの中身=%o' , form);
 
 			jQuery('html,body').animate({ scrollTop: form.offset().top - 80}, 'slow', null);
 			return false;
