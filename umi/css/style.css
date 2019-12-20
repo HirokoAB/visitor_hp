@@ -1703,6 +1703,10 @@ contact_追記_フィールドミュジアム入力画面
 width: 700px;
 margin:auto;
 }
+
+#wrap_contact input{
+	border:solid #ffffff;
+}
 #wrap_contact input,
 #wrap_coontact select{
 /*	vertical-align:middle;*/
@@ -1896,6 +1900,10 @@ text-align:center;
     padding: 1% 3%;
 }
 
+#wrap_contact .times input{
+	border: solid #CCC;
+    border-width: 1px;
+}
 #wrap_contact select option{
   background-color: #fff;
   color: #333;
@@ -1904,10 +1912,12 @@ text-align:center;
 #wrap_contact select::-ms-expand {
   display: none;
 }
+
 #wrap_contact select:-moz-focusring { 
   color: transparent; 
   text-shadow: 0 0 0 #828c9a;
 }
+
 #wrap_contact input[type="date"]::-webkit-inner-spin-button{
     -webkit-appearance: none;
 }
@@ -1915,14 +1925,17 @@ text-align:center;
 #wrap_contact input[type="date"]::-webkit-clear-button{
     -webkit-appearance: none;
 }
+
 #wrap_contact .ajax-loader{
 	display:none;
 }
+
 #wrap_contact{
   cursor: pointer;
   color: #333;
   font-weight: normal;
 }
+
 #wrap_contact .lever:before{
   content:"\f372";
   font-family: "IonIcons";
@@ -1932,9 +1945,11 @@ text-align:center;
   position: relative;
   top: 2px;
 }
+
 #wrap_contact input[type="checkbox"]:checked + .lever{
   color: #4788bf;
 }
+
 #wrap_contact input[type="checkbox"]:checked + .lever:before{
   content:"\f373";
   font-family: "IonIcons";
@@ -1945,7 +1960,10 @@ text-align:center;
 	 transform: rotate( -90deg );
 	 margin-top:30px;
 	 width:100px;
-	 
+}
+
+.wpcf7-form-mode-confirm .experience dt{
+	font-size:0.8rem;
 }
 
 
