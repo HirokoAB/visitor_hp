@@ -6,15 +6,6 @@
 
  */
 
- function min(date, format) {
- 
-    format = format.replace(/YYYY/, date.getFullYear());
-    format = format.replace(/MM/, date.getMonth() + 1);
-    format = format.replace(/DD/, date.getDate());
- 
-    return format;
-}
-
 
 jQuery(document).ready(function(){
 	
@@ -55,9 +46,19 @@ jQuery(document).ready(function(){
 		}
 	}
 
-
-
 	if ( ! flg) return;
+
+	function min(date, format) {
+ 
+    format = format.replace(/YYYY/, date.getFullYear());
+    format = format.replace(/MM/, date.getMonth() + 1);
+    format = format.replace(/DD/, date.getDate());
+ 
+    return format;
+	}
+
+	var date_min = $(this).find('#day,#signature-date,#guardian-date');
+		date_min.attr('min',(min(new Date(),'YYYY-MM-DD')));
 
 	//記述雨を残すための記述
 	jQuery('form.wpcf7-form')
@@ -86,7 +87,7 @@ jQuery(document).ready(function(){
 				.change()
 				;
 				var address = $(this);
-				console.log('これがアドレスのThis=%o',address);
+				// console.log('これがアドレスのThis=%o',address);
 			} else if (child.get(0).tagName.toLowerCase() == 'textarea'){
 				jQuery(this)
 				.after(
@@ -169,15 +170,11 @@ jQuery(document).ready(function(){
 			}
 			if (child.hasClass('wpcf7-date')){
 				jQuery(this)
+				.children().attr('max','9999-12-31');
+				jQuery(this)
 				.after(
 					jQuery('<span>').addClass('wpcf7-form-control-wrap-confirm')
 				);
-				if ($(this).hasClass('date-1'||'signature-date'||'guardian-signature-date')){
-						$( '.wpcf7-form-control-wrap>input').attr('min',(min(new Date(),'YYYY-MM-DD')));
-                }
-						console.log(child);
-					
-					console.log(this);
 				child
 				.change(function(){
 					jQuery(this).parent().next().text(
@@ -189,8 +186,6 @@ jQuery(document).ready(function(){
 			}
 			
 		});
-
-
 
 
 		
