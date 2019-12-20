@@ -1734,21 +1734,26 @@ text-align: left;
 vertical-align: middle;
 border: solid #CCC;
 border-width: 1px;
+margin-left:20%;
+margin-bottom:3%;
+background: #ffffff;
 }
 
 #wrap_contact dl dt{
+font-size:16px;
 width:20%;
 float:left;
 clear:left;
+margin-top:2px;
 vertical-align: middle;
 font-weight:900;
 }
 
-#wrap_contact dl dd{
-	margin-left:20%;
-	margin-bottom:3%;
-	background: #ffffff;
+#wrap_contact .experience dt{
+font-size:14px;
+margin-top:0px;
 }
+
 
 
 #wrap_contact input,
@@ -2006,6 +2011,10 @@ border-width: 0px 1px 0px 1px;
 margin-left:0;
 }
 
+#wrap_contact input {
+    border: solid ;
+    border: solid 0.5px rgb(204, 204, 204)
+}
 #wrap_contact h2{
 font-size: 16px;
 margin-bottom:0px;
