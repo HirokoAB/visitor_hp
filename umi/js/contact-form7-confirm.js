@@ -330,6 +330,7 @@ jQuery(document).ready(function(){
 						});
 						if ( ! flg){
 							 error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
+							 console.log('ghjklkjhjk');
 							jQuery(this).addClass('error');
 						}
 					}
@@ -346,6 +347,7 @@ jQuery(document).ready(function(){
 						if ( ! flg){
 							 error.append(jQuery('<li>').text(option.validates.required.before + title + option.validates.required.after));
 							jQuery(this).addClass('error');
+							console.log(this);
 						}
 					}
 				}
