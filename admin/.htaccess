@@ -1,0 +1,44 @@
+#---------------------------------------------------------------
+# HTTPSを強制
+#---------------------------------------------------------------
+#<IfModule mod_rewrite.c>
+#	RewriteEngine On
+#	RewriteCond %{HTTPS} off
+#	RewriteCond %{SERVER_PORT} !^443$
+#	RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
+#</IfModule>
+
+#---------------------------------------------------------------
+# BASIC認証
+#---------------------------------------------------------------
+#AuthUserFile /home/palz/palz-group.com/.htpasswd
+#AuthGroupFile /dev/null
+#AuthName "Please enter your ID and password"
+#AuthType Basic
+#require valid-user
+
+#---------------------------------------------------------------
+# エラーページ
+#---------------------------------------------------------------
+ErrorDocument 400 /admin/?mode=error&code=400
+ErrorDocument 403 /admin/?mode=error&code=403
+ErrorDocument 404 /admin/?mode=error&code=404
+ErrorDocument 500 /admin/?mode=error&code=500
+ErrorDocument 503 /admin/?mode=error&code=503
+
+#---------------------------------------------------------------
+# ドットで始まるファイルはブラウザ経由でのアクセスをさせない
+#---------------------------------------------------------------
+<Files ~ "^\.">
+	deny from all
+</Files>
+
+#---------------------------------------------------------------
+# ディレクトリのファイル一覧の表示を停止
+#---------------------------------------------------------------
+#Options All -Indexes
+
+#---------------------------------------------------------------
+# デフォルトで表示するページを設定
+#---------------------------------------------------------------
+DirectoryIndex index.php index.html

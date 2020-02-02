@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="石巻・川のビジターセンター,三陸,自然,体験,スポーツ,">
+<meta name="description" content="石巻・川のビジターセンターのWEBサイトです。当センターは三陸復興国立公園や周辺の自然の情報を発信し、自然とふれあう機会をご提供いたします。">
+<link rel="canonical" href="">
+
+<title>発刊物 | 石巻・川のビジターセンター</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/lower.css">
+<link rel="stylesheet" href="css/issue.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/common.js"></script>
+<script type="text/javascript" src="js/jquery.tile.js"></script>
+<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+<script>
+
+var resize = function() {
+    var w = $(window).width();
+    var x = 640;
+    if (w <= x) {
+	}
+	else {
+		$('.issue_list').tile(2);
+	}
+}
+$(function(){
+
+    // スタッフの取得
+    $.getJSON('../api/issue.php?search[position_id]=2', null, function(json, status){
+        if ('' == json.list) {
+            return false;
+        }
+
+        var html = '';
+        for (i in json.list) {
+            var list = json.list[i];
+            html += '<li class="issue_list">';
+            html += '<dl class="clearfix">';
+            html += '<dt><img src="' + list.image_path + '" alt="' + list.image_text + '"></dt>';
+            html += '<dd>';
+            html += '<h4>' + list.title + '</h4>';
+            html += '<a href="download.php?file=' + list.file_path + '" class="download" ><p class="pdf_link">' + list.file_text + '（' + list.file_size + '）</p></a>';
+            html += '<p class="text">' + nl2br(list.text) + '</p>';
+            html += '</dd>';
+            html += '</dl>';
+            html += '</li>';
+        }
+        $('#issue_block ul').append(html).find('img').each(function(){
+            $(this).on('load', function(){
+                resize();
+            });
+        });
+    });
+});
+</script>
+</script>
+</head>
+<body id="staff">
+    <div id="wrap">
+        <header class="m_center">
+            <h1><a href="./"><img src="img/common/logo_img.png" alt="石巻・川のビジターセンター"></a></h1>
+            <p id="header_bg"><img src="img/common/header_bg.png" alt=""></p>
+        </header>
+        <p class="menu_btn_wrap"><span class="menu_btn"></span></p>
+        <div id="nav_wrap">
+            <nav>
+                <p>Contents</p>
+                <ul class="contents_inner">
+                    <li><a href="facility.html">施設紹介</a></li>
+                    <li><a href="staff.html">スタッフ紹介</a></li>
+                    <li><a href="issue.html">発刊物</a></li>
+                    <li><a href="rent.html">スペース貸出</a></li>
+                    <li><a href="program.html">自然史の学び舎プログラム</a></li>
+                    <li><a href="environ.html">周辺情報</a></li>
+                    <li><a href="info.html">お知らせ</a></li>
+                    <li><a href="event.html">イベント</a></li>
+                    <li><a href="sitemap.html">サイトマップ</a></li>
+                    <li><a href="contact.php">お問い合わせ</a></li>
+                    <li><a href="policy.html">プライバシーポリシー</a></li>
+                </ul>
+        	</nav>
+        </div>
+        <div id="header_line"><img src="img/common/header_section.png" alt=""></div>
+        <div id="contents" class="m_center">
+            <h2>発刊物</h2>
+            <p class="intro_text">当センターに置いてある発刊物のご紹介です。</p>
+            <section id="issue_block">
+            	<h3 class="h3_box">発刊物一覧</h3>
+                <ul class="clearfix">
+                </ul>
+            </section>
+
+            <div id="bottom_nav">
+                <div class="row">
+                    <div class="col-sm-12 wp-fiu5 banner">
+                        <a href="http://www.env.go.jp/" target="_blank" rel="noopener noreferrer"><img src="img/common/banner01.png" alt="環境省"></a>
+                        <a href="http://www.env.go.jp/park/sanriku/" target="_blank" rel="noopener noreferrer"><img src="img/common/banner02.png" alt="三陸復興国立公園"></a>
+                        <a href="http://www.tohoku-trail.go.jp/" target="_blank" rel="noopener noreferrer"><img src="img/common/banner03.png" alt="みちのく潮風トレイル"></a>
+                        <a href="http://www.town.minamisanriku.miyagi.jp/" target="_blank" rel="noopener noreferrer" class="last"><img src="img/common/banner04.png" alt="南三陸町"></a>
+                        <a href="http://www.m-kankou.jp/" target="_blank" rel="noopener noreferrer"><img src="img/common/banner05.png" alt="南三陸町観光協会"></a>
+                        <a href="http://www.city.ishinomaki.lg.jp/" target="_blank" rel="noopener noreferrer"><img src="img/common/banner06.png" alt="石巻市"></a>
+                        <a href="http://www.i-kanko.com/" target="_blank" rel="noopener noreferrer"><img src="img/common/banner07.png" alt="石巻観光協会"></a>
+                        <a href="http://www.marinelearning.org/" target="_blank" rel="noopener noreferrer" class="last"><img src="img/common/banner08.png" alt="特定非営利活動法人海の自然史研究所"></a>
+                    </div>
+                </div>
+                <div id="bottom_navlist" class="clearfix">
+                    <div class="bottom_navlist_line">
+                        <p><a href="facility.html">施設紹介</a></p>
+                        <p><a href="staff.html">スタッフ紹介</a></p>
+                        <p><a href="issue.html">発刊物</a></p>
+                        <p><a href="rent.html">スペース貸出</a></p>
+                        <p><a href="program.html">自然史の学び舎プログラム</a></p>
+                    </div>
+                    <div class="bottom_navlist_line">
+                        <p><a href="environ.html">周辺情報</a></p>
+                        <p><a href="info.html">お知らせ</a></p>
+                        <p><a href="event.html">イベント</a></p>
+                        <p><a href="sitemap.html">サイトマップ</a></p>
+                        <p><a href="contact.php">お問い合わせ</a></p>
+                        <p><a href="policy.html">プライバシーポリシー</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer_line"><img src="img/common/footer_section.png" alt="石巻・川のビジターセンター"></div>
+        <footer class="m_center">
+            <div id="footer_text">
+                <img src="img/common/footer_img.png">
+                <p>〒986-0201 宮城県石巻市北上町十三浜字東田1　<br class="sp">電話／FAX:0225-24-6506<br>
+                Copyright：Ishinomaki kawa no Visitorcenter. All Right Reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ==========================================================================
+top
+========================================================================== */
+
+body {
+	color: #353535;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+a {
+	color: #353535;
+	text-decoration: none;
+}
+
+a, a img { 
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+a:hover, a:focus {
+	color: #888;
+	text-decoration: none;
+}
+
+a:hover img {
+	opacity: 0.7;
+}
+
+p {
+	word-spacing: 1px;
+	line-height: 1.8em;
+	font-size: 15px;
+	text-align: left;
+}
+
+.sp {
+	display: none;
+}
+
+.date {
+	font-size: 16px;
+	margin: 0;
+	letter-spacing: 0.1em;
+}
+
+
+
+.top-eve dl,
+.top-news dl {
+	border-bottom: 1px dotted #ccc;
+	margin: 0;
+    padding: 10px 0;
+	font-size: 15px;
+	overflow: hidden;
+	line-height: 1.5;
+}
+
+.top-news dl {
+    padding: 15px 0;
+}
+
+.top-eve dl dt {
+	float: left;
+	width: 100px;
+	height: auto;
+    line-height: 1.42857;
+}
+
+.top-eve dl dt img{
+	width: 100px;
+	height: auto;
+	border-radius: 50%;
+}
+
+.top-eve-title,
+.top-eve-day,
+.top-eve-text {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.top-eve dl dd {
+	margin-left: 120px;
+}
+
+.top-eve dl dd p{
+	padding: 0;
+	margin: 5px;
+}
+
+.top-eve-title {
+	font-weight: bold;
+}
+
+.top-news dl dt {
+	float: left;
+	width: 140px;
+	height: auto;
+	font-weight: 700;
+}
+
+.top-news dl dd {
+	margin-left: 140px;
+}
+
+.new {
+   border-radius: 0.25em;
+    color: #fff;
+    display: inline;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.2em 0.6em 0.2em;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+	background-color: #5cb85c;
+	margin-left: 10px;
+}
+
+@media screen and (max-width:480px) {
+.top-news dl dt {
+	float: none;
+	width: auto;
+}
+.top-news dl dd {
+	margin-left: 0;
+}
+}

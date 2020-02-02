@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/*-----------------------------------
+
+	共通
+
+-----------------------------------*/
+h3.h3_box{
+	font-size: 21px;
+}
+.intro_text{
+	text-align:left !important;
+}
+@media screen and (max-width: 640px) {
+	h3.h3_box{
+		font-size: 18px;
+		text-align:left;
+		margin: 30px 0;
+		padding: 10px 5px;
+	}
+}
+/*-----------------------------------
+
+	program_nav
+
+-----------------------------------*/
+#program_nav{
+	margin: 30px 0;
+}
+#program_nav li{
+	font-size: 18px;
+	line-height: 2.1rem;
+	width: 49%;
+	float: left;
+	margin: 25px 2% 0 0;
+}
+#program_nav li:first-child,
+#program_nav li:nth-child(2){
+	margin-top: 0;
+}
+#program_nav li:nth-child(2n){
+	margin-right: 0;
+}
+#program_nav li a{
+	display:block;
+}
+#program_nav li dt{
+	max-width: 110px;
+    font-size: 15px;
+    color: #fff;
+    background: #24536c;
+    margin-right: 10px;
+    padding: 1px 10px;
+    float: left;
+}
+#program_nav li dd{
+	padding-left: 110px;
+}
+@media screen and (max-width: 840px) {
+	#program_nav{
+		margin: 20px 0;
+	}
+	#program_nav li{
+		font-size: 16px;
+		line-height: 2.1rem;
+		width: 100%;
+		float: none;
+		margin: 15px 0 0 0;
+	}
+	#program_nav li:nth-child(2){
+		margin-top: 15px;
+	}
+	#program_nav li dt{
+		max-width: 90px;
+		font-size: 13px;
+		color: #fff;
+		background: #24536c;
+		margin-right: 10px;
+		padding: 1px 10px;
+		float: left;
+	}
+	#program_nav li dd{
+		padding-left: 90px;
+	}
+}
+/*-----------------------------------
+
+	program_block
+
+-----------------------------------*/
+.sitemap_block {
+	display: inline-block;
+	margin: 0 1% 0 10%;
+	width: 38%;
+	vertical-align: top;
+}
+.sitemap_block h4{
+	font-size: 18px;
+	color:#000;
+	margin-bottom: 20px;
+	padding: 5px 0 5px 20px;
+	border-left:solid 3px #24536c;
+}
+.sitemap_block .sub{
+	margin-left: 25px;
+}
+.pdf_link {
+    color: #fff;
+    background: #08b047;
+    text-align: right;
+}
+.pdf_link {
+    width: 170px;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 15px;
+    padding: 1px 5px;
+
+}
+@media screen and (max-width: 640px) {
+
+.sitemap_block {
+	display: block;
+	margin: 0;
+	width: 100%;
+}
+.sitemap_block .sub{
+	margin-left: 7%;
+}
+}

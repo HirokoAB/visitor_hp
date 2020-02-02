@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148154435-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-148154435-1');
+</script>
+
+<meta charset="utf-8">
+<meta name="keywords" content="石巻・川のビジターセンター,三陸,自然,体験,スポーツ,">
+<meta name="description" content="石巻・川のビジターセンターのWEBサイトです。当センターは三陸復興国立公園や周辺の自然の情報を発信し、自然とふれあう機会をご提供いたします。">
+<link rel="canonical" href="">
+
+<title>石巻・川のビジターセンター</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/jquery.bxslider.css">
+<link rel="stylesheet" href="js/colorbox/colorbox.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/jquery.bxslider.js"></script>
+<script src="js/colorbox/jquery.colorbox-min.js"></script>
+<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+<script>
+$(function(){
+    $.ajaxSetup({ async: false });
+
+    // お知らせの取得
+    $.getJSON('../api/info.php?search[position_id]=2&limit=5', null, function(json, status){
+        if ('' == json.list) {
+            return false;
+        }
+        for (i in json.list) {
+            var list = json.list[i];
+            var html = '';
+            html += '<dt>' + list.public_date + '<span class="cate" style="' + list.category_style + '">' + list.category_name + '</span></dt>';
+            html += '<dd><a href="./info.html?id=' + list.info_id + '">' + list.name + '</a></dd>';
+            $('#news').append(html);
+        }
+        $('.news_block').show();
+    });
+
+    // イベントの取得
+    $.getJSON('../api/event.php?search[position_id]=2&limit=5', null, function(json, status){
+        if ('' == json.list) {
+            return false;
+        }
+        for (i in json.list) {
+            var list = json.list[i];
+            var html = '';
+            html += '<dt>' + list.public_date + '</dt>';
+            html += '<dd><a href="./event.html?id=' + list.event_id + '">' + list.name + '</a></dd>';
+            $('#event').append(html);
+        }
+        $('.event_block').show();
+    });
+
+    // スライドバナーの取得
+    $.getJSON('../api/banner.php?search[position_id]=2', null, function(json, status){
+        if ('' == json.list) {
+            $('#slide_block').hide;
+            return false;
+        }
+        var len = 0;
+        for (i in json.list) {
+            var list = json.list[i];
+            var html = '';
+            html += '<li>';
+            if (list.link) {
+                if (list.target) {
+                    html += '<a href="' + list.link + '" target="' + list.target + '"><img src="' + list.image_path + '" alt="' + list.image_text + '"></a>';
+                } else {
+                    html += '<a href="' + list.link + '"><img src="' + list.image_path + '" alt="' + list.image_text + '"></a>';
+                }
+            } else {
+                html += '<img src="' + list.image_path + '" alt="' + list.image_text + '">';
+            }
+            html += '</li>';
+            $('#slide_img').append(html);
+            len++;
+        }
+        $(window).on('load', function(){
+            if (1 < len) {
+                $('#slide_img').bxSlider({
+                    auto:true,
+                    mode: 'fade',
+                    speed:1000,
+                    controls: false
+                });
+            }
+            $('#slide_block').animate({'opacity': '1'}, 1500);
+        });
+    });
+});
+</script>
+</head>
+<body id="index">
+    <div id="wrap">
+        <header class="m_center">
+            <h1><a href="./"><img src="img/common/logo_img.png" alt="石巻・川のビジターセンター"></a></h1>
+            <p id="header_bg"><img src="img/common/header_bg.png" alt=""></p>
+        </header>
+        <p class="menu_btn_wrap"><span class="menu_btn"></span></p>
+        <div id="nav_wrap">
+            <nav>
+                <p>Contents</p>
+                <ul class="contents_inner">
+                    <li><a href="facility.html">施設紹介</a></li>
+                    <li><a href="staff.html">スタッフ紹介</a></li>
+                    <li><a href="issue.html">発刊物</a></li>
+                    <li><a href="rent.html">スペース貸出</a></li>
+                    <li><a href="program.html">自然史の学び舎プログラム</a></li>
+                    <li><a href="environ.html">周辺情報</a></li>
+                    <li><a href="info.html">お知らせ</a></li>
+                    <li><a href="event.html">イベント</a></li>
+                    <li><a href="sitemap.html">サイトマップ</a></li>
+                    <li><a href="contact.php">お問い合わせ</a></li>
+                    <li><a href="policy.html">プライバシーポリシー</a></li>
+                </ul>
+        	</nav>
+        </div>
+        <div id="header_line"><img src="img/common/header_section.png" alt=""></div>
+        <div id="mainimg"><img src="img/index/mainimg.png"></div>
+        <div id="contents" class="m_center">
+			<div class="clearfix">
+				<div id="contents_left">
+                	<section id="top_block">
+                    	<p class="open_text pc"><img src="img/index/open_text.png" alt="石巻・川のビジターセンターは、平成30年4月にオープンします。地域の豊かな自然を守りながら、森・里・海のつながりが体験できるプログラムなどの事業を行っていきます。ご期待ください!"></p>
+                		<p class="open_text sp">
+							石巻・川のビジターセンターは東北最大の河川・北上川のほとりにあります。<br>
+							北上川河口域は、日本でも数少ないヨシの群生地となっており、雄大なヨシ原の景観が広がります。<br>
+							三陸復興国立公園内にある当施設では、地域の自然を生かしたイベントを企画するとともに、自然体験・地域の社会活動などに向けてお部屋の貸出しを行っています。北上川や川に生息する生き物に関する展示もご覧になれます。<br>
+							入館料は無料で、開館時間内であればどなたでも自由に出入りできます。<br>
+							近くにお越しの際はぜひお気軽にお立ち寄りください！
+						</p>
+                    </section>
+                    <section class="news_block">
+                        <h2 class="icon_yacht"><img src="img/index/info_head.png" alt="Information"></h2>
+                        <dl id="news">
+                        </dl>
+                    </section>
+                    <section class="event_block">
+                        <h2 class="icon_yacht"><img src="img/index/event_head.png" alt="Event"></h2>
+                        <dl id="event">
+                        </dl>
+                    </section>
+                </div>
+                <div id="contents_right">
+                	<section id="slide_block">
+                        <ul id="slide_img">
+                        </ul>
+                    </section>
+                    <section id="access_block">
+                        <h2><img src="img/index/access_head.png" alt="Access"></h2>
+			            <p class="map_sum"><a href="./map.html" class="colorbox"><img src="./img/index/map_sum.png" alt="アクセスマップ"></a></p>
+                        <p class="access">
+                            所在地：宮城県石巻市北上町十三浜字東田1<br />
+                        </p>
+                        <p class="root">
+                            車：三陸自動車道「河北IC」から30分。<br />
+                            ICを降りて国道45号を北に進み、<br />
+                            県道197号を東に進みます。
+                        </p>
+                    </section>
+                </div>
+            </div>
+            <div id="bottom_nav">
+                <div class="row">
+                    <div class="col-sm-12 wp-fiu5 banner">
+                        <a href="http://www.env.go.jp/" target="_blank" rel="noopener noreferrer"><img src="img/common/banner01.png" alt="環境省"></a>
+                        <a href="http://www.env.go.jp/park/sanriku/" target="_blank" rel="noopener noreferrer"><img src="img/common/banner02.png" alt="三陸復興国立公園"></a>
+                        <a href="http://www.tohoku-trail.go.jp/" target="_blank" rel="noopener noreferrer"><img src="img/common/banner03.png" alt="みちのく潮風トレイル"></a>
+                        <a href="http://www.town.minamisanriku.miyagi.jp/" target="_blank" rel="noopener noreferrer" class="last"><img src="img/common/banner04.png" alt="南三陸町"></a>
+                        <a href="http://www.m-kankou.jp/" target="_blank" rel="noopener noreferrer"><img src="img/common/banner05.png" alt="南三陸町観光協会"></a>
+                        <a href="http://www.city.ishinomaki.lg.jp/" target="_blank" rel="noopener noreferrer"><img src="img/common/banner06.png" alt="石巻市"></a>
+                        <a href="http://www.i-kanko.com/" target="_blank" rel="noopener noreferrer"><img src="img/common/banner07.png" alt="石巻観光協会"></a>
+                        <a href="http://www.marinelearning.org/" target="_blank" rel="noopener noreferrer" class="last"><img src="img/common/banner08.png" alt="特定非営利活動法人海の自然史研究所"></a>
+                    </div>
+                </div>
+                <div id="bottom_navlist" class="clearfix">
+                    <div class="bottom_navlist_line">
+                        <p><a href="facility.html">施設紹介</a></p>
+                        <p><a href="staff.html">スタッフ紹介</a></p>
+                        <p><a href="issue.html">発刊物</a></p>
+                        <p><a href="rent.html">スペース貸出</a></p>
+                        <p><a href="program.html">自然史の学び舎プログラム</a></p>
+                    </div>
+                    <div class="bottom_navlist_line">
+                        <p><a href="environ.html">周辺情報</a></p>
+                        <p><a href="info.html">お知らせ</a></p>
+                        <p><a href="event.html">イベント</a></p>
+                        <p><a href="sitemap.html">サイトマップ</a></p>
+                        <p><a href="contact.php">お問い合わせ</a></p>
+                        <p><a href="policy.html">プライバシーポリシー</a></p>
+                    </div>
+                </div>
+            </div>
+             <div class="footerFB"><a href="https://www.facebook.com/%E7%9F%B3%E5%B7%BB-%E5%B7%9D%E3%81%AE%E3%83%93%E3%82%B8%E3%82%BF%E3%83%BC%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC-1230229357009619/" target="_blank"><img src="img/index/btn_top_fb.png" alt="石巻 川のビジターセンター" class="kawaFBbtn"></a></div>
+        </div>
+        <div id="footer_line"><img src="img/common/footer_section.png" alt="石巻・川のビジターセンター"></div>
+        <footer class="m_center">
+            <div id="footer_text">
+                <img src="img/common/footer_img.png">
+                <p>〒986-0201 宮城県石巻市北上町十三浜字東田1　<br class="sp">電話／FAX:0225-24-6506<br>
+                Copyright：Ishinomaki kawa no Visitorcenter. All Right Reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

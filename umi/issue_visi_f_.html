@@ -1,0 +1,59 @@
+
+
+
+
+
+
+
+
+
+
+<script>
+	//発刊物のデータ取得
+	$(function(){
+		//getJSON->DBに接続後jsonという名の変数に格納
+		$.getJSON('../api/issue.php?search[position_id]=1', null,function(json,status){
+			//取得したデータはjsonのlist中に格納されている
+			if ('' == json.list){
+				return false;
+			}
+			//html変数の中身をまずは空にする
+			var html = '';
+			//jsonの中身があるかぎりfor文を実行する
+			for (i in json.list) {
+				var list = json.list[i];
+				if (0 === (i % 2)) {
+					html += '<div class="row">';
+					html += '<ul id="issue_block" class="col-sm-8 col-sm-offset-2">';
+				}
+				html += '<li class="col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">';
+				html += '<dl>';
+				html += '<dt><img src="' + list.image_path + '" alt="' + list.image_text'" class=img-responsive"></dt>';
+				html += '<dd>';
+				html += '<h3>' + list.title + '</h3>';
+				html += '<p class="text-center"><a href="download.php?file=' + list.file_path + '" target="_blank">' + list.file_text + '(' + list.file_size + ')</a></p>';
+				html += '<p class="text">' + nl2br(list.text) + '</p>';
+				html += '</dd>';
+				html += '</dl>';
+				html += '</li>';
+				if (1 === (i % 2)) {
+					html += '</ul>';
+					html += '</div>';
+				}
+			}
+
+			
+			$('.issue-box').append(html);
+		});
+
+	});
+
+
+
+
+
+
+
+
+
+</script>
