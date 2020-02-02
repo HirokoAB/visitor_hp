@@ -83,5 +83,4 @@ add_filter( 'wpcf7_validate_radio*', 'wpcf7_checkbox_validation_filter', 10, 2 )
 
 
 
-
 ?>

@@ -60,7 +60,7 @@ jQuery(document).ready(function(){
 	var date_min = $(this).find('#day,#signature-date,#guardian-date');
 		date_min.attr('min',(min(new Date(),'YYYY-MM-DD')));
 
-	//記述雨を残すための記述
+	//記述を残すための記述
 	jQuery('form.wpcf7-form')
 	.each(function(){
 		
@@ -70,8 +70,6 @@ jQuery(document).ready(function(){
 			var child = jQuery(this).children(0);
 			if (child.hasClass('wpcf7-text' && 'contact-address')){
 				jQuery('.address > input').addClass('p-region p-locality p-street-address p-extended-address');
-			}else if(child.hasClass('wpcf7-text' && 'contact-postalcode')){
-				jQuery('.postal-code > input').addClass('p-postal-code');
 			};	
 			if (child.hasClass('wpcf7-text')){
 				jQuery(this)
